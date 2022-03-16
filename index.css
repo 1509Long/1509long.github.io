@@ -1,0 +1,22 @@
+body {
+    max-width: 800px;
+    margin: 100px auto;
+    font-size: 18px;
+}
+[src] {
+    width: 200px;
+    height:200px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.item {
+    padding: 20px;
+    border: 2px solid #f1f1f1;
+    border-radius: 5px;
+}
