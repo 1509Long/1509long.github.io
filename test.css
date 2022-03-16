@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.red {
+  background-color: red;
+  height: 400px;
+  width: 100%;
+}
+.red.a1 {
+  width: 55%;
+}
+
+.blue {
+  background-color: blue;
+  height: 400px;
+  width: 100%;
+}
+
+.green {
+  background-color: green;
+  height: 400px;
+  width: 100%;
+}
+
+.blue.a1,
+.green.a1 {
+  height: 200px;
+}
+
+.container {
+  width: 45%;
+}
+
+.flex,
+.flex-15px {
+  display: flex;
+  margin: 30px 0;
+}
+
+.container.a15px {
+  margin-left: 15px;
+}
+
+.grid,
+.grid-15px {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-15px {
+  grid-gap: 15px;
+}
+
