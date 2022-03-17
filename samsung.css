@@ -1,0 +1,56 @@
+body {
+  max-width: 1000px;
+  margin: 30px auto;
+  font-size: 18px;
+  color: #333;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.samsung1 {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-gap: 30px;
+  margin-bottom: 50px;
+}
+
+[src] {
+  width: 100%;
+}
+
+h1,
+h2 {
+  margin: 0 0 15px 0;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+.sale {
+  margin-top: 40px;
+}
+
+.sale > p {
+  padding: 10px;
+  background-color:#e0e0e0;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+span {
+  color: #d0021c;
+}
+
+.blue {
+  color: #2f80ed;
+}
