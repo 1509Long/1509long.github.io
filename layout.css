@@ -1,16 +1,23 @@
 body {
-  max-width: 950px;
+  max-width: 1000px;
   margin: 30px auto;
   font-size: 20px;
   color: #333;
   font-family: "Times New Roman", Times, serif;
+  background-color: #fed100;
+}
+
+.background {
+  padding: 30px;
+  background-color: white;
+  border-radius: 7px;
 }
 
 .layout1 {
   display: grid;
   grid-template-columns: 1.5fr 2fr;
-  grid-gap: 30px;
-  margin-bottom: 50px;
+  grid-gap: 25px;
+  margin-bottom: 30px;
 }
 
 [src] {

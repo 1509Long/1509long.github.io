@@ -1,47 +1,55 @@
 body {
-    max-width: 1000px;
-    margin: 30px auto;
-    font-size: 18px;
-    font-family: 'Times New Roman', Times, serif;
+  max-width: 1000px;
+  margin: 30px auto;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #fed100;
+  color: #333;
+}
+
+.background {
+  padding: 30px;
+  background-color: white;
+  border-radius: 7px;
 }
 
 h1 {
-    font-size: 35px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 p {
-    color: black;
-    margin: 0;
+  color: black;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .price {
-    font-size: 20px;
-    margin: 10px 0;
+  font-size: 20px;
+  margin: 10px 0;
 }
 [src] {
-    width: 200px;
-    margin-bottom: 40px;
+  width: 200px;
+  margin-bottom: 40px;
 }
 
 .container {
-    width: 800px;
-    padding: 20px 0;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
+  width: 800px;
+  padding: 20px 0;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .item {
-    padding: 30px 10px;
-    border: 2px solid #f1f1f1;
-    border-radius: 5px;
+  padding: 30px 10px;
+  border: 2px solid #f1f1f1;
+  border-radius: 5px;
 }
