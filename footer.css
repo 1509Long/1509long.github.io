@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+.foooter {
+  background-color: #464646;
+}
+.container {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: auto;
+}
+.item ul li {
+  list-style-type: none;
+  color: #919294;
+  margin-bottom: 7px;
+}
+
+ul {
+  padding-left: 0;
+}
+.item ul li a {
+  text-decoration: none;
+  color: #919294;
+}
+
+h3 {
+  color: #fff;
+}
+
+.header {
+  background-color: #34465c;
+  padding: 0px 20px;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu li {
+  color: #fff;
+  padding: 15px 15px;
+  list-style-type: none;
+}
