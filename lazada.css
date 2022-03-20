@@ -1,0 +1,70 @@
+body {
+  margin: 30px 0;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+
+.navbar {
+  padding: 10px 0;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 25%);
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+  color: #999;
+  text-decoration: none;
+  padding: 3px 7px;
+  display: block;
+}
+
+.menu-level-2 {
+  box-sizing: border-box;
+  width: 200px;
+  height: 296px;
+  padding: 10px 0;
+  background-color: #fff;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 25%);
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+
+a:hover {
+  color: #e17055;
+  background-color: #dfe6e9;
+}
+
+.bar1:hover .menu-level-2.Devices,
+.bar2:hover .menu-level-2.Accessories,
+.bar3:hover .menu-level-2.Appliances,
+.bar4:hover .menu-level-2.Beauty,
+.bar5:hover .menu-level-2.Toys,
+.bar6:hover .menu-level-2.Pets,
+.bar7:hover .menu-level-2.Lifestyle,
+.bar8:hover .menu-level-2.Women,
+.bar9:hover .menu-level-2.Men,
+.bar10:hover .menu-level-2.Fashion,
+.bar11:hover .menu-level-2.Travel,
+.bar12:hover .menu-level-2.Motorcycles {
+  visibility: visible;
+}
+
+.navbar-pic > img {
+  height: 296px;
+}
+
+.navbar-pic {
+  display: flex;
+  justify-content: center;
+  background: rgb(92, 36, 255);
+}
