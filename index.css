@@ -4,6 +4,7 @@ body {
   font-size: 18px;
   font-family: "Times New Roman", Times, serif;
   color: #333;
+  background-color: #fff5f3;
 }
 
 .background {
@@ -12,7 +13,7 @@ body {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 45px;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -20,10 +21,11 @@ h1 {
 
 p {
   color: black;
-  margin: 0;
+  text-align: center;
 }
 
 a {
+  display: block;
   text-decoration: none;
 }
 
@@ -51,3 +53,9 @@ a {
   border: 2px solid #f1f1f1;
   border-radius: 5px;
 }
+
+img {
+  margin: auto;
+  display: block;
+}
+
