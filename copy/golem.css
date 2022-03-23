@@ -1,0 +1,95 @@
+body {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+header {
+    margin: auto;
+    background-color: #13188d;
+    background-image: url(https://assets-global.website-files.com/60005e3965a10f31d245af87/605362e1fd39467304d84226_Header-background-circles-blue-theme-optimized-2.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.part1-header {
+    width: 1325px;
+    height: 800px;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.part1-main {
+    width: 1325px;
+    margin: 80px auto 0 auto;
+
+}
+
+nav {
+    height: 10%;
+}
+
+nav > ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav > ul > li {
+    margin-top: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+nav i {
+    padding-left: 10px;
+}
+
+nav p {
+    margin: 0;
+}
+
+.content-header {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.content-header > p {
+    width: 600px;
+    font-size: 20px;
+}
+
+span {
+    margin-top: 40px;
+}
+
+.click-header {
+    padding: 15px 60px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 15px;
+    color: #181ea9;
+    background-color: #fff;
+    border: none;
+}
+
+.part1-main > p {
+    text-align: end;
+}
+
+.flex-part1 {
+    display: flex;
+}
