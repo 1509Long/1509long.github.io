@@ -45,6 +45,13 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: left;
+  width: 1000px;
+  margin: auto;
+  color: #2e4756;
+}
+
 .return {
   display: block;
   display: flex;

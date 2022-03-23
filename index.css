@@ -4,7 +4,7 @@ body {
   font-size: 18px;
   font-family: "Times New Roman", Times, serif;
   color: #333;
-  background-color: #fff5f3;
+  background-color: #e7e0db;
 }
 
 .background {
@@ -17,11 +17,20 @@ h1 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
+  color: #3a6489;
 }
 
 p {
-  color: black;
+  color: #fff;
   text-align: center;
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  transform: 2s;
+  letter-spacing: 2px;
+}
+
+p:hover {
+  color: #f8e3c3;
 }
 
 a {
@@ -34,28 +43,27 @@ a {
   margin: 10px 0;
 }
 [src] {
-  width: 200px;
   margin-bottom: 40px;
+  margin: auto;
+  display: block;
+  width: 200px;
+  height: 267px;
 }
 
 .container {
-  width: 800px;
+  width: 750px;
   padding: 20px 0;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 30px;
 }
 
 .item {
-  padding: 30px 10px;
-  border: 2px solid #f1f1f1;
+  padding: 20px 5px;
   border-radius: 5px;
+  background-color: #517ba0;
 }
 
-img {
-  margin: auto;
-  display: block;
-}
 
