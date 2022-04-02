@@ -64,4 +64,5 @@ a {
   padding: 20px 5px;
   border-radius: 5px;
   background-color: #517ba0;
+  transition: 0.5s;
 }
