@@ -51,7 +51,7 @@ a {
 }
 
 .container {
-  max-width: 750px;
+  width: 750px;
   padding: 20px 0;
   margin: auto;
   display: grid;
@@ -66,13 +66,6 @@ a {
   .container {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-@media screen and (max-width: 526px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
 }
 
 .item {

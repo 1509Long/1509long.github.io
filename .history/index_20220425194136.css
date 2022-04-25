@@ -68,13 +68,6 @@ a {
   }
 }
 
-@media screen and (max-width: 526px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-}
-
 .item {
   padding: 20px 5px;
   border-radius: 5px;

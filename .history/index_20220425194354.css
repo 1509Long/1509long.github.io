@@ -73,6 +73,9 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .item {
+    height: 300px;
+  }
 }
 
 .item {

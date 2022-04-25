@@ -73,6 +73,12 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .item {
+    width: 300px;
+
+    body {
+      margin: 30px auto;
+  }
 }
 
 .item {
