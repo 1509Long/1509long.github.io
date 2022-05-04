@@ -1,0 +1,41 @@
+body {
+    background-color: #61948e;
+}
+
+.background {
+    height: 100px;
+}
+
+.col {
+    padding: 0 !important;
+}
+
+.part1a {
+    margin: 0 0 12px 0;
+}
+
+.item {
+    margin-right: 12px;
+}
+
+.part2 {
+    padding: 0 !important;
+}
+
+.part1 {
+    margin-right: 40px;
+}
+
+.item1 {
+    height: 250px;
+}
+
+@media screen and (max-width : 991px) { 
+      .part2 {
+          margin-top: 40px;
+      }
+      
+      .part1 {
+          margin-right: 0;
+      }
+}
