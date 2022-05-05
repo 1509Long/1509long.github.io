@@ -18,9 +18,6 @@
     </ul>
 
     <script>
-      
-      // Bài 3
-
       function changeTheList() {
         // 1. Thêm 3 thẻ <li> có nội dung Item 8, Item 9, Item 10 vào cuối danh sách
         let addItem8 = document.createElement("li");
@@ -47,10 +44,11 @@
         // 5. Thêm thẻ <li> mới thay thế cho thẻ <li> 4 bị xóa ở bước trước, thẻ <li> mới có nội dung bất kỳ
           let addNewItem = document.createElement("li");
           addNewItem.innerHTML = "The new item";
-          list.append(addNewItem);
           // addNewItem.after(list.children[3]);
-          list.children[3].before(addNewItem);
+          addNewItem.Before(list.children[3]);
+
       }
+
       changeTheList();
     </script>
   </body>
