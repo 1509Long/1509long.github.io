@@ -1,0 +1,172 @@
+body {
+    padding-top: 30px;
+    font-family: Taviraj;
+    background-color: #f7f6f4;
+    font-size: 1em;
+}
+
+.container {
+    max-width: 1110px;
+    padding: 0;
+}
+
+/* navbar */
+
+.logo-nav {
+    width: 178px;
+    height: 22px;
+}
+
+.fas , .far {
+    font-size: 1.25em;
+    color: #969696;
+}
+
+.fas:hover , .far:hover {
+    color: #969696; 
+}
+
+.nav-link:hover , .text-nav:focus , .nav-link:focus {
+    color: #333;
+}
+
+.text-nav {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.fa-user {
+    padding-top: 2px;
+}
+
+.part3-nav {
+    padding: 0 10px;
+    margin-left: 20px;
+}
+
+.container-fluid {
+    margin-bottom: 50px;
+    padding: 0
+}
+
+.navbar-nav{
+    margin: 0 auto;
+}
+
+.navbar-toggler {
+    outline: none;
+    border: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+}
+
+/* breadcrumb */
+
+.breadcrumb a , .container-fluid a {
+    text-decoration: none;
+    color: #333;
+
+}
+
+.breadcrumb .active {
+    color: #D84727;
+}
+
+/* collapse */
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.text a {
+    transition: 0.5s;
+}
+
+.text a:focus {
+    color: #D84727;
+    font-weight: 700;
+}
+
+/* grid */
+
+.card {
+    max-width: 255px;
+    height: 403px !important;
+}
+
+.card img {
+    padding: 30px 20px 0;
+
+}
+
+del {
+    color: #D84727;
+}
+
+.card-text {
+    margin-bottom: 5px;
+}
+
+h5 {
+    font-weight: 530;
+}
+
+h3 {
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* footer */
+
+.footer-a img {
+    max-width: 100px;
+}
+
+.footer-a {
+    background-color: #ec8169;
+    margin-top: 80px;
+    padding-top: 20px;
+}
+
+.padding {
+    padding: 0;
+}
+
+.footer-b {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: #ee512d;
+    color: #fff;
+}
+
+.margin-footer-b {
+    margin-top: 16px;
+}
+
+td {
+    padding-left: 10px;
+}
+
+
+
+@media screen and (max-width : 576px) {
+    .none {
+        display: none;
+    }
+  }
+
+@media screen and (max-width : 992px) {
+    .part3-nav {
+        padding: 0;
+        margin-left: 0;
+    }
+
+    .nav-button {
+    background-color: #f7f6f4 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 10px 0 !important;
+    }
+}
