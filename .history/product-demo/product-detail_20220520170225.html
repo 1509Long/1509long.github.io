@@ -533,7 +533,7 @@
                   </div>
 
                   <div>
-                    <button onClick="clickA()" id="click-item-a">
+                    <button onClick="click-a()">
                       <i class="fas fa-trash"></i>
                     </button>
                   </div>
@@ -601,7 +601,7 @@
                   </div>
 
                   <div>
-                    <button onClick="clickB()" id="click-item-b">
+                    <button onClick="click-b()" id="click">
                       <i class="fas fa-trash"></i>
                     </button>
                   </div>
@@ -648,16 +648,12 @@
     ></script>
 
     <script>
-      function clickB() {
-        let item = document.getElementById("click-item-b").parentElement.parentElement.parentElement.parentElement;
-        item.remove()
+      function long() {
+        let bc = document.getElementById("click").parentElement;
+        console.log(bc);
       }
 
-      function clickA() {
-        let item = document.getElementById("click-item-a").parentElement.parentElement.parentElement.parentElement;
-        item.remove()
-      }
-
+      long();
 
       var numberA = document.getElementById("number-a");
       var numberB = document.getElementById("number-b");
