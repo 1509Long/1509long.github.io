@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+
+      body {
+        margin: 30px;
+      }
+      /* .toggle-top , .toggle-bottom , .toggle-left , .toggle-right {
+        visibility: hidden;
+      } */
+
+      #button {
+        color: #fff;
+        background-color: grey;
+        padding: 10px 15px;
+        border: 1px solid grey;
+        border-radius: 10px;
+        
+      }
+
+      .part1 {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      .box {
+        padding: 20px;
+        border: 1px solid grey;
+        border-radius: 10px;
+      }
+
+      .toggle-top {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+      }
+
+
+    </style>
+  </head>
+  <body>
+      <div class="part1">
+        <div>
+          <button id="button" onclick="boxA()">Popoever on top</button>
+          <div class="toggle-top box" id="top">Top popoever</div>
+        </div>
+        <div>
+          <button id="button" onclick="boxB()">Popoever on bottom</button>
+          <div class="toggle-bottom box" id="bottom">Bottom popover</div>
+        </div>
+        <div>
+          <button id="button" onclick="boxC()">Popoever on left</button>
+          <div class="toggle-left box" id="left">Left popover</div>
+        </div>
+        <div>
+          <button id="button" onclick="boxD()">Popoever on right</button>
+          <div class="toggle-right box" id="right">Right popover</div>
+        </div>
+      </div>
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <script>
+      function boxA () {
+        let click = document.getElementById("top");
+        console.log(click);
+        click.classList.toggle("toggle-top");
+      }
+
+      function boxB () {
+        let click = document.getElementById("bottom");
+        console.log(click);
+        click.classList.toggle("toggle-bottom");
+      }
+
+      function boxC () {
+        let click = document.getElementById("left");
+        console.log(click);
+        click.classList.toggle("toggle-left");
+      }
+
+      function boxD () {
+        let click = document.getElementById("right");
+        console.log(click);
+        click.classList.toggle("toggle-right");
+      }
+    </script> -->
+  </body>
+</html>
