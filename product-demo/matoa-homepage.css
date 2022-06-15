@@ -737,3 +737,35 @@ p.text-nav {
         margin-top: 2rem;
     }
 }
+
+/* scrollbar
+Các thông tin cần lưu ý trong custom scrollbar:
+- ::-webkit-scrollbar : the scrollbar (set width)
+
+- ::-webkit-scrollbar-button : the buttons on the scrollbar (arrows pointing upwards and downwards) => thường sẽ sử dụng display: none khi tùy biến
+
+- ::-webkit-scrollbar-thumb : the draggable scrolling handle (thanh tay nắm để cuộn lên cuộn xuống)
+
+- ::-webkit-scrollbar-track : the track (progress bar) of the scrollbar. (thanh ray để phần thumb cuộn lên xuống (phần này sẽ bao gồm cả the scrollbar track 
+và cả thumb => nếu không set thumb thì cả phần scrollbar và thumb sẽ trùng màu => phải nhớ sét ""webkit-scrollbar-thumb)
+
+- ::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle. (thanh ray để phần thumb cuộn lên xuống, track-piece sẽ không bao gồm thumb)
+
+- ::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+*/
+::-webkit-scrollbar {
+    max-width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #DA5E42;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #D84727;
+    height: 5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #b33b20;
+}
