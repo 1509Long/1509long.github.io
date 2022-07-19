@@ -20,20 +20,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
   </head>
   <body>
-    <!-- CÁC THÔNG TIN TRONG FILE INFORMATION SẼ KHÔNG ĐƯỢC XÓA 
-    
-    1. Custom scrollbar: Xem thông tin tại file CSS của matoa homepage
-    2. Chart:
+    <!-- CÁC THÔNG TIN TRONG FILE INFORMATION SẼ KHÔNG ĐƯỢC XÓA  -->
 
--->
-    <div id="a2">freestyle</div>
+    <!-- 1. Custom scrollbar: Xem thông tin tại file CSS của matoa homepage -->
+    <!-- 2.1. Donut Chart- bản thử nghiệm cần hoàn thiện thêm -->
 
-    <div id="a1">70000</div>
+    <!-- 2.2 Candlestick Chart - bản thử nghiệm cần hoàn thiện thêm -->
+    <!-- Candlestick charts: Lỗi 1: lệch múi giờ +7 so với giơ chuẩn quốc tế nên khi đặt x - datetime sẽ xảy ra hiện tượng data cung cấp thông tin thời gian nhanh hơn charts 7 tiếng theo múi giờ địa phương -->
+    <button
+      id="confirm-button"
+      data-bs-target="#buy-notification"
+      data-bs-toggle="modal"
+      onclick="otpBuyConfirm()"
+    >
+      Xác thực
+    </button>
 
-    <canvas id="myChart" width="810" height="478"></canvas>
+    <table id="table" class="table align-middle buy-sell-transaction-table">
+      <thead class="head-transaction">
+        <tr>
+          <th scope="col">Mã giao dịch</th>
+          <th scope="col">Thời gian</th>
+          <th scope="col">Giao dịch</th>
+          <th scope="col">Cặp giao dịch</th>
+          <th scope="col">Giá khớp lệnh</th>
+          <th scope="col">Phí giao dịch</th>
+          <th scope="col">Số lượng token</th>
+          <th scope="col">Số lượng USDT</th>
+        </tr>
+      </thead>
+      <tbody class="body-transaction"></tbody>
+    </table>
+
     <!-- Bootstrap JavaScript Libraries -->
-
-    <script src="./App.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
@@ -46,152 +65,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      const data = {
-        "15h05": 185134,
-        "15h06": 195514,
-        "15h07": 80460,
-        "15h08": 57022,
-        "15h09": 22165,
-        "15h10": 80460,
-        "15h15": 57022,
-        "15h16": 185134,
-        "15h17": 195514,
-        "15h18": 80460,
-        "15h19": 57022,
-        "15h20": 22165,
-        "15h21": 80460,
-        "15h22": 57022,
-        "15h23": 185134,
-        "15h24": 195514,
-        "15h25": 80460,
-        "15h26": 57022,
-        "15h27": 22165,
-        "15h28": 80460,
-        "15h29": 57022,
-      };
-
-      var abc = document.getElementById("a2").textContent;
-      var cde = document.getElementById("a1").textContent;
-      var cde2 = parseInt(cde)
-
-      data[abc]=cde2;
-      console.log (data);
-
-      Chart.defaults.font.size = 8;
-      const ctx = document.getElementById("myChart").getContext("2d");
-      const myChart = new Chart(ctx, {
-        type: "line",
-        data: {
-        labels: Object.keys(data),
-          datasets: [
-            {
-              label: "price",
-              data: Object.values(data),
-              fill: false,
-          borderColor: "rgb(75, 192, 192)",
-          tension: 0.1,
-          borderWidth:1.5,
-            },
-          ],
-        },
-        options: {
-        maintainAspectRatio: false,
-        responsive: false,
-
-        plugins: {
-          legend: {
-            display: false,
-          },
-        },
-
-          plugins: {
-            legend: {
-                labels: {
-                    // This more specific font property overrides the global property
-                    font: {
-                        size: 5
-                    }
-                }
-            }
-        }
-        },
-        
-      });
-
-      // var a1 = document.querySelector(".a1").textContent;
-      // var a2 = document.getElementById("a2").textContent;
-      // var b2 = parseInt(a1);
-
-      // function addData(chart, label, data) {
-      //   chart.data.labels.push(label);
-      //   chart.data.datasets.forEach((dataset) => {
-      //     dataset.data.push(data);
-      //   });
-
-      //   chart.update();
-      // }
-
-      // addData(myChart, a2, b2);
-
-      //   function updateChart(chart, dataObj) {
-      //     // Store data into the database
-      //     Object.assign(data, dataObj);
-
-      //     // Fetch data from the database and replace old data
-      //     chart.data.labels = Object.keys(data);
-      //     chart.data.datasets.forEach((dataset) => {
-      //       dataset.data = Object.values(data);
-      //     });
-
-      //     chart.update();
-      //   }
-
-      //   const newData = { SolidJS: 18200 };
-      //   updateChart(myChart, newData);
-
-      // var text =
-      //   '{ "BTC" : [' +
-      //   '{ "firstName":2000},' +
-      //   '{ "16/6":4000},' +
-      //   '{ "17/6":9000} ]}';
-      //   var obj = JSON.parse(text);
-      //   console.log (obj);
-
-      //   var newobj = [];
-      //   newobj.push(obj.BTC[0].156);
-      //   console.log(newobj);
-
-      // const ctx = document.getElementById("myChart").getContext("2d");
-      // const myChart = new Chart(ctx, {
-      //   type: "line",
-      //   data: {
-      //     labels: obj.BTC.keys,
-      //     datasets: [
-      //       {
-      //         label: "price",
-      //         data: obj.BTC.values,
-      //       },
-      //     ],
-      //   },
-      //   options: {
-      //     maintainAspectRatio: false,
-      //     responsive: false,
-      //     backgroundColor: [
-      //       "rgba(255, 99, 132, 0.2)", // Bar 1
-      //       "rgba(54, 162, 235, 0.2)", // Bar 2
-      //       "rgba(255, 206, 86, 0.2)", // Bar 3
-      //       "rgba(75, 192, 192, 0.2)", // Bar 4
-      //       "rgba(153, 102, 255, 0.2)", // Bar 5
-      //       "rgba(255, 159, 64, 0.2)", // Bar 6
-      //     ],
-      //     plugins: {
-      //       legend: {
-      //         display: false,
-      //       },
-      //     },
-      //   },
-      // });
-    </script>
+<script src="./copy.js"></script>
   </body>
 </html>

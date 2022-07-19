@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,500;0,600;0,700;0,900;1,100;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+html {
+    font-size: 10px;
+}
+
+ * {
+     box-sizing: border-box !important;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: #143084;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.padding {
+    padding: 0 !important;
+}
+
+.margin , .img-fluid {
+    margin: 0 !important;
+}
+
+p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: #1F1F1F;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width : 1399px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width : 1199px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width : 991px) {
+    html {
+        font-size: 7px;
+    }
+
+    .hr {
+        width: 15.5rem;
+    }
+}
+
+@media screen and (max-width : 767px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+/* Logo - Login */
+.logo-attlas {
+    width: 15.5rem;
+}
+
+.logo-text {
+    font-size: 6rem;
+    margin-left: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.slogan {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+/* Login - form */
+.login-form {
+    padding: 7rem 2.75rem;
+    width: 45rem;
+    background-color: #fff;
+    border-radius: 2.4rem;
+}
+
+.signIn-header {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem !important;
+}
+
+.form-label {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1F1F1F;
+}
+
+.form-control {
+    height: 4.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: #F4F8FB;
+    border-radius: 0.8rem;
+    border: 0.5px solid #8B8C9B;
+    transition: 0.3s;
+}
+
+.form-control:hover , .form-control:focus {
+    background-color: #F4F8FB;
+    border-color: #1576F5;
+    box-shadow: 0 0 0 0;
+}
+
+.margin-bottom-form {
+    margin-bottom: 2.5rem;
+}
+
+.forgetPassword {
+    font-size: 1.4rem;
+    color:#1576F5;
+    font-weight: 500;
+    margin-top: 0.7rem;
+}
+
+.signIn {
+    font-size: 2rem;
+    font-weight: 700;
+    background: #1576F5;
+    border-radius: 8px;
+    width: 100%;
+    border: 0;
+    margin-top: 0.5rem;
+    transition: 0.3s;
+    color: #fff;
+}
+
+.signIn a {
+    display: block;
+    padding: 1.25rem 0;
+    color: #fff;
+}
+
+.padding-modal {
+    padding: 1.25rem 0 !important;
+    display: none;
+}
+
+.signIn:hover , .signIn:focus {
+    background: #0857be;
+}
+
+.forgetPassword:hover , .forgetPassword:focus , .signUp span a:hover , .signUp span a:focus {
+    color: #0A66DF;
+}
+
+.signUp {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #979797;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.signUp span {
+    color: #1576F5;
+    font-weight: 600;
+}
+
+.click-to-signIn img {
+    width: 2.5rem;
+}
+
+.click-to-signIn a {
+    padding: 1rem 4.75rem;
+    background-color: #F3F3F3;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.click-to-signIn a:hover , .click-to-signIn a:focus {
+    background-color: #e2e2e2;
+}
+
+.decorration-login {
+    margin-bottom: 2rem;
+}
+
+.hr {
+    width: 16.5rem;
+}
+
+.decorration-login p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #C7C7C7;
+}
+
+/* Ra giữa màn hình
+Bước 1: Vì body ôm trọn lấy phần container nên cần đặt body có height = 100vh (tương đương body = 100% height của màn hình
+Bước 2: Body với thẻ display: flex , justify content và align-content để căn giữa */
+@media screen and (max-width : 991px) {
+    .attlas-big-logo-login , .connect-to-homepage {
+        display: none !important;
+    }
+
+    .attlas-login-mini , .padding-modal {
+        display: block !important;
+    }
+
+    .login-form {
+        padding: 4rem !important;
+    }
+}
+
+.logo-mini {
+    width: 10rem;
+}
+
+.attlas-login-mini p {
+    color: #392dc8;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.attlas-login-mini {
+    margin-bottom: 2rem;
+    display: none;
+}
+
+/* Modal */
+.btn-close {
+    width: 2rem;
+    height: 2rem;
+}
+
+.modal-title {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.modal-body p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1.5rem 0 4rem;
+}
+
+.modal-body p span {
+    font-weight: 600;
+    color: #392dc8;
+}
+
+#download-ip , #download-android {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1.5rem 4rem;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+
+#download-ip {
+    background-color: #1576F5;
+}
+
+#download-android {
+    background-color: #074FAE;
+}
+
+.modal-content {
+    border-radius: 0.8rem;
+    border: 0;
+    padding: 4rem 2.5rem 6rem;
+}

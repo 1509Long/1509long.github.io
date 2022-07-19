@@ -1,0 +1,91 @@
+/* Attlas-logo-navbar */
+.attlas-logo-navbar img {
+    width: 3.5rem;
+}
+
+.attlas-logo-navbar p {
+    color: #392dc8;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-left: 0.75rem;
+}
+
+.navbar-brand {
+    margin-right: 5rem;
+}
+
+/* Nav-bar */
+.top-navbar .nav-link {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem !important;
+    color: #1F1F1F;
+}
+
+.top-md-navbar {
+    margin-bottom: 6rem;
+    padding: 0 0.5rem 0.5rem;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.navbar-part1 {
+    gap: 3rem;
+}
+
+.navbar-part2 {
+    gap: 1.5rem;
+}
+
+.user-account p {
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #392dc8;
+}
+
+.user-account img {
+    max-width: 3.5rem;
+    width: 100%;
+    border-radius: 2.4rem;
+}
+
+.fa-bell {
+    font-size: 2rem;
+    color: #392dc8;
+}
+
+.account-wallet {
+    color: #392dc8 !important;
+}
+
+.dropdown-item {
+    width: 30rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1rem 0.75rem !important;
+    color: #b3b2b2;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #dfd9f7;
+    color: #1F1F1F;
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+    border: 1px solid #E1E1E1;
+    border-top: 0;
+    background-color: #fff;
+    padding: 1rem 0;
+
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 5.3rem;
+}
+
+/* Nav-bar của màn hình dưới 767px */
+.offcanvas.offcanvas-end {
+    /* width: 40rem !important; */
+}

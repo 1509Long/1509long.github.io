@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="./nav-bar.css" />
+  </head>
+  <body>
+    <div class="container-lg">
+      <nav class="navbar navbar-expand-lg top-navbar">
+        <a class="navbar-brand" href="./homepage.html">
+          <div class="d-flex align-items-center attlas-logo-navbar">
+            <img src="./img/header-logo.png" class="img-fluid" alt="" />
+            <p>Attlas</p>
+          </div>
+        </a>
+
+        <div
+          class="collapse navbar-collapse d-flex justify-content-between"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav navbar-part1">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Giao dịch
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Spot</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Ký quỹ</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">P2P trading</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Thị trường</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Phái sinh</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Earn
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Launchpad</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Staking</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Farming</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav navbar-part2">
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link account-wallet" href="#">Wallet</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./wallet.html">
+                <div class="d-flex align-items-center user-account">
+                  <p>Jen Glover</p>
+                  <img src="./img/Rectangle 356.png" class="img-fluid" alt="" />
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row d-flex justify-content-between align-items-center">
+        <div class="col-lg-3 d-flex justify-content-start">
+          <p class="title">DASHBOARD</p>
+        </div>
+        <div class="col-lg-3 d-flex justify-content-end">
+          <div class="input-group has-validation search-bar">
+            <input
+              type="text"
+              class="form-control search"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend"
+            />
+            <span class="input-group-text search-icon" id="inputGroupPrepend"
+              ><img src="./img/Group.png"
+            /></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-start align-items-center header">
+        <p class="header-text">BTC/USDT</p>
+        <table
+          class="table table-borderless align-middle info-table-header margin"
+        >
+          <tbody>
+            <tr>
+              <td class="price-header">.</td>
+              <td>Biến động 24h</td>
+              <td>Khối lượng 24h (BTC)</td>
+            </tr>
+            <tr>
+              <td>USDT</td>
+              <td class="change-header">.</td>
+              <td class="volumn-header">.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="d-flex align-items-center time-bar">
+            <p>Thời gian</p>
+            <div class="d-flex align-items-center time-button">
+              <button
+                type="button"
+                class="btn btn-outline-secondary time-setting"
+              >
+                15m
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary time-setting"
+                onclick="timeClick()"
+              >
+                30m
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary time-setting active"
+                onclick="timeClick()"
+              >
+                60m
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary time-setting"
+              >
+                3h
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary time-setting"
+              >
+                1D
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary time-setting"
+              >
+                1W
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary time-setting"
+              >
+                1M
+              </button>
+            </div>
+            <button type="button" class="btn btn-outline-secondary indicators">
+              <div class="d-flex align-items-center">
+                <span>Chỉ báo kỹ thuật</span>
+                <img src="./img/Group 7.png" class="img-fluid" alt="" />
+              </div>
+            </button>
+          </div>
+
+          <div id="candlestick-chart"></div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="swap-box">
+            <div class="head-swap-box">
+              <div id="buy-button" class="full-border" onclick="clickBuy()">
+                MUA
+              </div>
+              <div
+                id="sell-button"
+                class="missed-border-default"
+                onclick="clickSell()"
+              >
+                BÁN
+              </div>
+            </div>
+
+            <div class="main-swap-box-buy">
+              <div
+                class="d-flex justify-content-between align-items-center part1-swap"
+              >
+                <div>
+                  <div class="input-group has-validation USDT">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pay-USDT"
+                      aria-describedby="inputGroupPrepend"
+                      placeholder="20,636.737 USDT"
+                      onmouseleave="getValueOfUSDT(this)"
+                    />
+                    <span class="input-group-text" id="inputGroupPrepend"
+                      ><img src="./img/icon_USDT.png" class="img-fluid" alt=""
+                    /></span>
+                  </div>
+
+                  <div class="input-group has-validation token">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="receive-token"
+                      aria-describedby="inputGroupPrepend"
+                      disabled
+                    />
+                    <span class="input-group-text" id="inputGroupPrepend"
+                      ><img src="./img/1.png" class="img-fluid" alt=""
+                    /></span>
+                  </div>
+                </div>
+                <div onclick="clickSell()" class="pointer">
+                  <img src="./img/Artboard 1.png" class="img-fluid" alt="" />
+                </div>
+              </div>
+
+              <div class="part2-swap">
+                <table
+                  class="table table-borderless align-middle info-account-swap-USDT-to-token"
+                >
+                  <tbody>
+                    <tr class="swap-USDT-to-token">
+                      <td>Số USDT khả dụng</td>
+                      <td>500 USDT</td>
+                    </tr>
+                    <tr>
+                      <td>Số lượng BTC đang sở hữu</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Lời lỗ (USDT)</td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="part3-swap">
+                <p>Tỉ giá quy đổi: 1 BTC ~ <span>20,636.74</span> USDT</p>
+                <p>
+                  Phí giao dịch: 0.075% sẽ tính vào phần USDT trên mỗi giao dịch
+                </p>
+              </div>
+
+              <button type="button" class="btn" id="swap-button">
+                <a
+                  id="swap-link"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  href="#buy-transaction-confirmation"
+                  role="button"
+                  onclick="autoInnerBuyInfo()"
+                  >QUY ĐỔI</a
+                >
+              </button>
+            </div>
+
+            <div class="main-swap-box-sell disappear">
+              <div
+                class="d-flex justify-content-between align-items-center part1-swap"
+              >
+                <div>
+                  <div class="input-group has-validation USDT">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="sell-token"
+                      aria-describedby="inputGroupPrepend"
+                      placeholder="0 BTC"
+                      onmouseleave="getValueOfToken(this)"
+                    />
+                    <span class="input-group-text" id="inputGroupPrepend"
+                      ><img src="./img/1.png" class="img-fluid" alt=""
+                    /></span>
+                  </div>
+
+                  <div class="input-group has-validation token">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="receive-USDT"
+                      aria-describedby="inputGroupPrepend"
+                      disabled
+                    />
+                    <span class="input-group-text" id="inputGroupPrepend"
+                      ><img src="./img/icon_USDT.png" class="img-fluid" alt=""
+                    /></span>
+                  </div>
+                </div>
+                <div onclick="clickBuy()" class="pointer">
+                  <img src="./img/Artboard 1.png" class="img-fluid" alt="" />
+                </div>
+              </div>
+
+              <div class="part2-swap">
+                <table
+                  class="table table-borderless align-middle info-account-swap-token-to-USDT"
+                >
+                  <tbody>
+                    <tr>
+                      <td>Số lượng BTC đang sở hữu</td>
+                      <td>0</td>
+                    </tr>
+                    <tr class="swap-token-to-USDT">
+                      <td>Lời lỗ (USDT)</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Số USDT khả dụng</td>
+                      <td>500 USDT</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="part3-swap">
+                <p>Tỉ giá quy đổi: 1 BTC ~ <span>20,636.74</span> USDT</p>
+                <p>
+                  Phí giao dịch: 0.075% sẽ tính vào phần USDT trên mỗi giao dịch
+                </p>
+              </div>
+
+              <button type="button" class="btn" id="swap-button">
+                <a
+                  id="swap-link"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  href="#sell-transaction-confirmation"
+                  role="button"
+                  onclick="autoInnerSellInfo()"
+                  >QUY ĐỔI</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row information-token">
+        <div class="col-lg-8">
+          <div class="about-token">
+            <p>Thông tin token</p>
+            <p>
+              Bitcoin (BTC) là đồng tiền điện tử đầu tiên trên thế giới, đặt nền
+              móng cho sự phát triển của thị trường Crypto. Bitcoin được phát
+              hành năm 2009 bởi một nhân vật bí ẩn có biệt danh Satoshi
+              Nakamoto.
+            </p>
+            <p>
+              Bitcoin được xây dựng dựa vào công nghệ Blockchain. Công nghệ này
+              là một chuỗi các khối có chứa thông tin, giúp giám sát mọi thứ
+              chặt chẽ thông qua cuốn sổ cái và giúp bạn giao dịch dễ dàng mà
+              không qua một bên thứ 3 nào khác.
+            </p>
+            <p>
+              Đây là một loại tiền tệ kỹ thuật số được phát hành dưới dạng phần
+              mềm mã nguồn mở và sử dụng giao thức ngang hàng (peer-to-peer) cho
+              tất cả các giao dịch. Giao thức này cho phép Bitcoin loại bỏ tất
+              cả các bước trung gian trong quá trình thực hiện giao dịch. Điều
+              này có nghĩa là tất cả các giao dịch diễn ra trực tiếp giữa những
+              người tham gia mạng lưới một cách bình đẳng, độc lập. Giao dịch
+              Bitcoin sẽ được thực hiện trực tiếp từ người gửi đến người nhận
+              với phí giao dịch cực kỳ thấp (gần như bằng 0) mà không phải qua
+              bất cứ tổ chức hay cá nhân trung gian nào.
+            </p>
+
+            <div class="d-flex website">
+              <a href="https://bitcoin.org/bitcoin.pdf" target="_blank"
+                >Whitepaper</a
+              >
+              <a href="https://bitcoin.org/en/" target="_blank"
+                >Official Bitcoin Website</a
+              >
+              <a href="https://github.com/bitcoin/bitcoin" target="_blank"
+                >Source Code</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="statistics">
+            <p>Biến động</p>
+            <table class="table statistics-table">
+              <tbody>
+                <tr>
+                  <td>7D</td>
+                  <td class="increase">+0.89%</td>
+                </tr>
+                <tr>
+                  <td>1M</td>
+                  <td class="decrease">-28.33%</td>
+                </tr>
+                <tr>
+                  <td>3M</td>
+                  <td class="decrease">-47.81%</td>
+                </tr>
+                <tr>
+                  <td>1Y</td>
+                  <td class="decrease">-56.36%</td>
+                </tr>
+                <tr>
+                  <td>Highest Price 1Y</td>
+                  <td>69,082.80</td>
+                </tr>
+                <tr>
+                  <td>Lowest Price 1Y</td>
+                  <td>22,615.68</td>
+                </tr>
+                <tr>
+                  <td>ATH</td>
+                  <td>69,028.80</td>
+                </tr>
+                <tr>
+                  <td>Market Cap</td>
+                  <td>$398.62B</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="buy-transaction-confirmation"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="confirmation"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content confirmation-buy-modal">
+          <div class="modal-header">
+            <p class="modal-title" id="confirmation">Xác thực giao dịch</p>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Để bảo mật thông tin giao dịch, vui lòng nhập mã key của tài khoản
+              để hoàn tất xác thực giao dịch quy đổi từ
+              <span class="inner-buy-form-USDT"></span> <span>USDT</span> sang
+              <span class="inner-buy-form-token"></span> <span>BTC</span>
+            </p>
+            <div>
+              <input
+                type="email"
+                class="form-control"
+                id="buy-OTP"
+                placeholder="Nhập mã key"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="confirm-button"
+              data-bs-target="#buy-notification"
+              data-bs-toggle="modal"
+              onclick="otpBuyConfirm()"
+            >
+              Xác thực
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-content no-value-buy-modal disappear">
+          <div class="warning-content">
+            <img src="./img/Warning.png" class="img-fluid" alt="" />
+            <p>Cảnh báo giao dịch</p>
+            <p>
+              Bạn vui lòng điền đầy đủ thông tin số lượng USDT để giao dịch quy
+              đổi USDT/BTC thực hiện hoàn tất
+            </p>
+
+            <button id="swap-button">
+              <a href="./dashboard.html" id="swap-link">Đã hiểu</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="buy-notification"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content result-modal">
+          <div class="success-buy-transaction">
+            <div class="success-content">
+              <img src="./img/Success.png" class="img-fluid" alt="" />
+              <p>Quy đổi thành công</p>
+              <p>
+                Bạn đã quy đổi thành công từ
+                <span class="inner-buy-form-USDT"></span> <span>USDT</span> sang
+                <span class="inner-buy-form-token"></span> <span>BTC</span>
+              </p>
+
+              <button id="swap-button" onclick="innerTransaction()">
+                <a href="./wallet.html" id="swap-link">Chi tiết giao dịch</a>
+              </button>
+            </div>
+          </div>
+
+          <div class="failed-buy-transaction">
+            <div class="failed-content">
+              <img src="./img/Failed.png" class="img-fluid" alt="" />
+              <p>Quy đổi thất bại</p>
+              <p>
+                Vui lòng kiểm tra lại thông tin key của tài khoản và tiến hành
+                lại giao dịch quy đổi
+              </p>
+
+              <button id="swap-button">
+                <a href="./dashboard.html" id="swap-link">Đã hiểu</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="sell-transaction-confirmation"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="confirmation"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content confirmation-sell-modal">
+          <div class="modal-header">
+            <p class="modal-title" id="confirmation">Xác thực giao dịch</p>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Để bảo mật thông tin giao dịch, vui lòng nhập mã key của tài khoản
+              để hoàn tất xác thực giao dịch quy đổi từ
+              <span class="inner-sell-form-token"></span> <span>BTC</span> sang
+              <span class="inner-sell-form-USDT"></span> <span>USDT</span>
+            </p>
+            <div>
+              <input
+                type="email"
+                class="form-control"
+                id="sell-OTP"
+                placeholder="Nhập mã key"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="confirm-button"
+              data-bs-target="#sell-notification"
+              data-bs-toggle="modal"
+              onclick="otpSellConfirm()"
+            >
+              Xác thực
+            </button>
+          </div>
+        </div>
+        <div class="modal-content no-value-sell-modal disappear">
+          <div class="warning-content">
+            <img src="./img/Warning.png" class="img-fluid" alt="" />
+            <p>Cảnh báo giao dịch</p>
+            <p>
+              Bạn vui lòng điền đầy đủ thông tin số lượng BTC để giao dịch quy
+              đổi BTC/USDT thực hiện hoàn tất
+            </p>
+
+            <button id="swap-button">
+              <a href="./dashboard.html" id="swap-link">Đã hiểu</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="sell-notification"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content result-modal">
+          <div class="success-sell-transaction">
+            <div class="success-content">
+              <img src="./img/Success.png" class="img-fluid" alt="" />
+              <p>Quy đổi thành công</p>
+              <p>
+                Bạn đã quy đổi thành công từ
+                <span class="inner-sell-form-token"></span>
+                <span>BTC</span> sang
+                <span class="inner-sell-form-USDT"></span> <span>USDT</span>
+              </p>
+
+              <button id="swap-button">
+                <a href="./wallet.html" id="swap-link">Chi tiết giao dịch</a>
+              </button>
+            </div>
+          </div>
+
+          <div class="failed-sell-transaction">
+            <div class="failed-content">
+              <img src="./img/Failed.png" class="img-fluid" alt="" />
+              <p>Quy đổi thất bại</p>
+              <p>
+                Vui lòng kiểm tra lại thông tin key của tài khoản và tiến hành
+                lại giao dịch quy đổi
+              </p>
+
+              <button id="swap-button">
+                <a href="./dashboard.html" id="swap-link">Đã hiểu</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script src="./file-data.js"></script>
+
+    <script>
+      function infoBTC() {
+        var priceBTC = document.querySelector(".price-header");
+        var changeBTC = document.querySelector(".change-header");
+        var volumnBTC = document.querySelector(".volumn-header");
+
+        priceBTC.textContent = parseFloat(
+          informationTokenHomePage[0].price
+        ).toLocaleString("en-US", { maximumFractionDigits: "3" });
+
+        changeBTC.textContent = parseFloat(
+          informationTokenHomePage[0].change
+        ).toLocaleString("en-US", { maximumFractionDigits: "3" });
+
+        if (parseFloat(informationTokenHomePage[0].change) > 0) {
+          changeBTC.setAttribute("class", "change-header-increase");
+        } else {
+          changeBTC.setAttribute("class", "change-header-decrease");
+        }
+
+        volumnBTC.textContent = informationTokenHomePage[0].volumn;
+      }
+
+      infoBTC();
+    </script>
+
+    <script>
+      var options = {
+        series: [
+          {
+            data: [
+              {
+                x: new Date("July 01, 2022 12:00:00"),
+                y: [6629.81, 6650.5, 6623.04, 6633.33],
+              },
+              {
+                x: new Date("July 01, 2022 13:00:00"),
+                y: [6632.01, 6643.59, 6620, 6630.11],
+              },
+              {
+                x: new Date("July 01, 2022 14:00:00"),
+                y: [6630.71, 6648.95, 6623.34, 6635.65],
+              },
+              {
+                x: new Date("July 01, 2022 15:00:00"),
+                y: [6635.65, 6651, 6629.67, 6638.24],
+              },
+              {
+                x: new Date("July 01, 2022 16:00:00"),
+                y: [6638.24, 6640, 6620, 6624.47],
+              },
+              {
+                x: new Date("July 01, 2022 17:00:00"),
+                y: [6624.53, 6636.03, 6621.68, 6624.31],
+              },
+              {
+                x: new Date("July 01, 2022 18:00:00"),
+                y: [6624.61, 6632.2, 6617, 6626.02],
+              },
+              {
+                x: new Date("July 01, 2022 19:00:00"),
+                y: [6627, 6627.62, 6584.22, 6603.02],
+              },
+              {
+                x: new Date("July 01, 2022 20:00:00"),
+                y: [6605, 6608.03, 6598.95, 6604.01],
+              },
+              {
+                x: new Date("July 01, 2022 21:00:00"),
+                y: [6604.5, 6614.4, 6602.26, 6608.02],
+              },
+              {
+                x: new Date("July 01, 2022 22:00:00"),
+                y: [6608.02, 6610.68, 6601.99, 6608.91],
+              },
+              {
+                x: new Date("July 01, 2022 23:00:00"),
+                y: [6608.91, 6618.99, 6608.01, 6612],
+              },
+              {
+                x: new Date("July 02, 2022 00:00:00"),
+                y: [6612, 6615.13, 6605.09, 6612],
+              },
+              {
+                x: new Date("July 02, 2022 01:00:00"),
+                y: [6612, 6624.12, 6608.43, 6622.95],
+              },
+              {
+                x: new Date("July 02, 2022 02:00:00"),
+                y: [6623.91, 6623.91, 6615, 6615.67],
+              },
+              {
+                x: new Date("July 02, 2022 03:00:00"),
+                y: [6618.69, 6618.74, 6610, 6610.4],
+              },
+              {
+                x: new Date("July 02, 2022 04:00:00"),
+                y: [6611, 6622.78, 6610.4, 6614.9],
+              },
+              {
+                x: new Date("July 02, 2022 05:00:00"),
+                y: [6614.9, 6626.2, 6613.33, 6623.45],
+              },
+              {
+                x: new Date("July 02, 2022 06:00:00"),
+                y: [6623.48, 6627, 6618.38, 6620.35],
+              },
+              {
+                x: new Date("July 02, 2022 07:00:00"),
+                y: [6619.43, 6620.35, 6610.05, 6615.53],
+              },
+              {
+                x: new Date("July 02, 2022 08:00:00"),
+                y: [6615.53, 6617.93, 6610, 6615.19],
+              },
+              {
+                x: new Date("July 02, 2022 09:00:00"),
+                y: [6615.19, 6621.6, 6608.2, 6620],
+              },
+              {
+                x: new Date("July 02, 2022 10:00:00"),
+                y: [6619.54, 6625.17, 6614.15, 6620],
+              },
+              {
+                x: new Date("July 02, 2022 11:00:00"),
+                y: [6620.33, 6634.15, 6617.24, 6624.61],
+              },
+              {
+                x: new Date("July 02, 2022 12:00:00"),
+                y: [6625.95, 6626, 6611.66, 6617.58],
+              },
+              {
+                x: new Date("July 02, 2022 13:00:00"),
+                y: [6619, 6625.97, 6595.27, 6598.86],
+              },
+              {
+                x: new Date("July 02, 2022 14:00:00"),
+                y: [6598.86, 6598.88, 6570, 6587.16],
+              },
+              {
+                x: new Date("July 02, 2022 15:00:00"),
+                y: [6588.86, 6600, 6580, 6593.4],
+              },
+              {
+                x: new Date("July 02, 2022 16:00:00"),
+                y: [6593.99, 6598.89, 6585, 6587.81],
+              },
+              {
+                x: new Date("July 02, 2022 17:00:00"),
+                y: [6587.81, 6592.73, 6567.14, 6578],
+              },
+              {
+                x: new Date("July 02, 2022 18:00:00"),
+                y: [6578.35, 6581.72, 6567.39, 6579],
+              },
+              {
+                x: new Date("July 02, 2022 19:00:00"),
+                y: [6579.38, 6580.92, 6566.77, 6575.96],
+              },
+              {
+                x: new Date("July 02, 2022 20:00:00"),
+                y: [6575.96, 6589, 6571.77, 6588.92],
+              },
+              {
+                x: new Date("July 02, 2022 21:00:00"),
+                y: [6588.92, 6594, 6577.55, 6589.22],
+              },
+              {
+                x: new Date("July 02, 2022 22:00:00"),
+                y: [6589.3, 6598.89, 6589.1, 6596.08],
+              },
+              {
+                x: new Date("July 02, 2022 23:00:00"),
+                y: [6597.5, 6600, 6588.39, 6596.25],
+              },
+              {
+                x: new Date("July 03, 2022 00:00:00"),
+                y: [6598.03, 6600, 6588.73, 6595.97],
+              },
+              {
+                x: new Date("July 03, 2022 01:00:00"),
+                y: [6595.97, 6602.01, 6588.17, 6602],
+              },
+              {
+                x: new Date("July 03, 2022 02:00:00"),
+                y: [6602, 6607, 6596.51, 6599.95],
+              },
+              {
+                x: new Date("July 03, 2022 03:00:00"),
+                y: [6600.63, 6601.21, 6590.39, 6591.02],
+              },
+              {
+                x: new Date("July 03, 2022 04:00:00"),
+                y: [6591.02, 6603.08, 6591, 6591],
+              },
+              {
+                x: new Date("July 03, 2022 05:00:00"),
+                y: [6591, 6601.32, 6585, 6592],
+              },
+              {
+                x: new Date("July 03, 2022 06:00:00"),
+                y: [6593.13, 6596.01, 6590, 6593.34],
+              },
+              {
+                x: new Date("July 03, 2022 07:00:00"),
+                y: [6593.34, 6604.76, 6582.63, 6593.86],
+              },
+              {
+                x: new Date("July 03, 2022 08:00:00"),
+                y: [6593.86, 6604.28, 6586.57, 6600.01],
+              },
+              {
+                x: new Date("July 03, 2022 09:00:00"),
+                y: [6601.81, 6603.21, 6592.78, 6596.25],
+              },
+              {
+                x: new Date("July 03, 2022 10:00:00"),
+                y: [6596.25, 6604.2, 6590, 6602.99],
+              },
+              {
+                x: new Date("July 03, 2022 11:00:00"),
+                y: [6602.99, 6606, 6584.99, 6587.81],
+              },
+              {
+                x: new Date("July 03, 2022 12:00:00"),
+                y: [6587.81, 6595, 6583.27, 6591.96],
+              },
+              {
+                x: new Date("July 03, 2022 13:00:00"),
+                y: [6591.97, 6596.07, 6585, 6588.39],
+              },
+              {
+                x: new Date("July 03, 2022 14:00:00"),
+                y: [6587.6, 6598.21, 6587.6, 6594.27],
+              },
+              {
+                x: new Date("July 03, 2022 15:00:00"),
+                y: [6596.44, 6601, 6590, 6596.55],
+              },
+              {
+                x: new Date("July 03, 2022 16:00:00"),
+                y: [6598.91, 6605, 6596.61, 6600.02],
+              },
+              {
+                x: new Date("July 03, 2022 17:00:00"),
+                y: [6600.55, 6605, 6589.14, 6593.01],
+              },
+              {
+                x: new Date("July 03, 2022 18:00:00"),
+                y: [6593.15, 6605, 6592, 6603.06],
+              },
+              {
+                x: new Date("July 03, 2022 19:00:00"),
+                y: [6603.07, 6604.5, 6599.09, 6603.89],
+              },
+              {
+                x: new Date("July 03, 2022 20:00:00"),
+                y: [6604.44, 6604.44, 6600, 6603.5],
+              },
+              {
+                x: new Date("July 03, 2022 21:00:00"),
+                y: [6603.5, 6603.99, 6597.5, 6603.86],
+              },
+              {
+                x: new Date("July 03, 2022 22:00:00"),
+                y: [6603.85, 6605, 6600, 6604.07],
+              },
+              {
+                x: new Date("July 03, 2022 23:00:00"),
+                y: [6604.98, 6606, 6604.07, 6606],
+              },
+            ],
+          },
+        ],
+
+        chart: {
+          type: "candlestick",
+          width: "100%",
+          fontFamily: '"Be Vietnam Pro", sans-serif',
+          zoom: {
+            enabled: false,
+          },
+          toolbar: {
+            show: false,
+          },
+        },
+        plotOptions: {
+          colors: {
+            upward: "#05B169",
+            downward: "#E95F67",
+          },
+        },
+
+        xaxis: {
+          type: "datetime",
+          range: 212400000,
+          labels: {
+            format: "HH:mm dd MMM",
+            style: {
+              fontSize: "1.2rem",
+            },
+          },
+        },
+        yaxis: {
+          tooltip: {
+            enabled: true,
+          },
+          labels: {
+            style: {
+              fontSize: "1.2rem",
+            },
+          },
+        },
+
+        tooltip: {
+          custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+            return " ";
+          },
+          x: {
+            show: true,
+            format: "HH:mm:ss dd MMM, yyyy",
+          },
+        },
+      };
+
+      var chart = new ApexCharts(
+        document.querySelector("#candlestick-chart"),
+        options
+      );
+
+      chart.render();
+    </script>
+
+    <script>
+      var buy = document.getElementById("buy-button");
+      var sell = document.getElementById("sell-button");
+
+      var swapBoxBuy = document.querySelector(".main-swap-box-buy");
+      var swapBoxSell = document.querySelector(".main-swap-box-sell");
+
+      function clickSell() {
+        swapBoxBuy.setAttribute("class", "disappear");
+        swapBoxSell.setAttribute("class", "main-swap-box-sell appear");
+
+        sell.setAttribute("class", "full-border");
+        buy.setAttribute("class", "missed-border-click-sell");
+      }
+
+      function clickBuy() {
+        swapBoxBuy.setAttribute("class", "main-swap-box-buy appear");
+        swapBoxSell.setAttribute("class", "disappear");
+
+        buy.setAttribute("class", "full-border");
+        sell.setAttribute("class", "missed-border-default");
+      }
+
+      function otpBuyConfirm() {
+        let buyOTP = document.getElementById("buy-OTP").value;
+        let successBuy = document.querySelector(".success-buy-transaction");
+        let failedBuy = document.querySelector(".failed-buy-transaction");
+
+        if (buyOTP == 2000) {
+          failedBuy.setAttribute("class", "failed-buy-transaction disappear");
+        } else {
+          successBuy.setAttribute("class", "success-buy-transaction disappear");
+        }
+      }
+
+      function otpSellConfirm() {
+        let sellOTP = document.getElementById("sell-OTP").value;
+        let successSell = document.querySelector(".success-sell-transaction");
+        let failedSell = document.querySelector(".failed-sell-transaction");
+
+        if (sellOTP == 2000) {
+          failedSell.setAttribute("class", "failed-buy-transaction disappear");
+        } else {
+          successSell.setAttribute(
+            "class",
+            "success-buy-transaction disappear"
+          );
+        }
+      }
+    </script>
+
+    <script>
+      function getValueOfUSDT(x) {
+        if (x.value > 0) {
+          let realUSDTtoBuy = x.value - x.value * (0.075 / 100);
+          let valueOfToken = (
+            realUSDTtoBuy / informationTokenHomePage[0].price
+          ).toLocaleString("en-US", { maximumFractionDigits: "5" });
+
+          let receiveToken = document.getElementById("receive-token");
+          receiveToken.setAttribute("value", valueOfToken);
+        }
+      }
+
+      function getValueOfToken(x) {
+        if (x.value > 0) {
+          let valueOfToken = x.value * informationTokenHomePage[0].price;
+          let realUSDTtoReceive = (
+            valueOfToken -
+            valueOfToken * (0.075 / 100)
+          ).toLocaleString("en-US", { maximumFractionDigits: "5" });
+
+          let receiveUSDT = document.getElementById("receive-USDT");
+          receiveUSDT.setAttribute("value", realUSDTtoReceive);
+        }
+      }
+
+      function autoInnerBuyInfo() {
+        let noValueBuy = document.querySelector(".no-value-buy-modal");
+        let confirmationBuy = document.querySelector(".confirmation-buy-modal");
+
+        let payUSDT = document.getElementById("pay-USDT").value;
+        let receiveToken = document.getElementById("receive-token").value;
+
+        if (payUSDT === "") {
+          noValueBuy.setAttribute(
+            "class",
+            "modal-content no-value-buy-modal appear"
+          );
+          confirmationBuy.setAttribute(
+            "class",
+            "modal-content confirmation-buy-modal disappear"
+          );
+        } else {
+          let innerBuyForm = document.querySelectorAll(".inner-buy-form-USDT");
+          for (i = 0; i <= innerBuyForm.length; i++) {
+            document.querySelectorAll(".inner-buy-form-USDT")[i].innerHTML =
+              payUSDT;
+            document.querySelectorAll(".inner-buy-form-token")[i].innerHTML =
+              receiveToken;
+          }
+        }
+      }
+
+      function autoInnerSellInfo() {
+        let noValueSell = document.querySelector(".no-value-sell-modal");
+        let confirmationSell = document.querySelector(
+          ".confirmation-sell-modal"
+        );
+
+        let sellToken = document.getElementById("sell-token").value;
+        let receiveUSDT = document.getElementById("receive-USDT").value;
+
+        if (sellToken === "") {
+          noValueSell.setAttribute(
+            "class",
+            "modal-content no-value-sell-modal appear"
+          );
+          confirmationSell.setAttribute(
+            "class",
+            "modal-content confirmation-sell-modal disappear"
+          );
+        } else {
+          let innerSellForm = document.querySelectorAll(
+            ".inner-sell-form-USDT"
+          );
+          for (i = 0; i <= innerSellForm.length; i++) {
+            document.querySelectorAll(".inner-sell-form-USDT")[i].innerHTML =
+              receiveUSDT;
+            document.querySelectorAll(".inner-sell-form-token")[i].innerHTML =
+              sellToken;
+          }
+        }
+      }
+    </script>
+    
+    <script>
+      function timeClick() {
+        var backGround = document.querySelector(".active");
+        backGround.setAttribute("class" , "btn btn-outline-secondary time-setting disactive")
+      }
+    </script>
+  </body>
+</html>
