@@ -27,30 +27,6 @@
 
     <!-- 2.2 Candlestick Chart - bản thử nghiệm cần hoàn thiện thêm -->
     <!-- Candlestick charts: Lỗi 1: lệch múi giờ +7 so với giơ chuẩn quốc tế nên khi đặt x - datetime sẽ xảy ra hiện tượng data cung cấp thông tin thời gian nhanh hơn charts 7 tiếng theo múi giờ địa phương -->
-    <button
-      id="confirm-button"
-      data-bs-target="#buy-notification"
-      data-bs-toggle="modal"
-      onclick="otpBuyConfirm()"
-    >
-      Xác thực
-    </button>
-
-    <table id="table" class="table align-middle buy-sell-transaction-table">
-      <thead class="head-transaction">
-        <tr>
-          <th scope="col">Mã giao dịch</th>
-          <th scope="col">Thời gian</th>
-          <th scope="col">Giao dịch</th>
-          <th scope="col">Cặp giao dịch</th>
-          <th scope="col">Giá khớp lệnh</th>
-          <th scope="col">Phí giao dịch</th>
-          <th scope="col">Số lượng token</th>
-          <th scope="col">Số lượng USDT</th>
-        </tr>
-      </thead>
-      <tbody class="body-transaction"></tbody>
-    </table>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script
@@ -65,6 +41,6 @@
       crossorigin="anonymous"
     ></script>
 
-<script src="./copy.js"></script>
+    <script src="./copy.js"></script>
   </body>
 </html>

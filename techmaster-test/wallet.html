@@ -135,15 +135,15 @@
       <p class="title">WALLET</p>
 
       <div class="row general-wallet-information">
-        <div class="col-lg-6 d-flex flex-column justify-content-between">
+        <div class="col-12 col-sm-6 d-flex flex-column justify-content-between">
           <div class="row">
-            <div class="col-lg-6 d-flex justify-content-center">
+            <div class="col-6 d-flex justify-content-center">
               <div class="part1">
                 <p>Số dư tài khoản</p>
                 <p>~4,254 USDT</p>
               </div>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center">
+            <div class="col-6 d-flex justify-content-center">
               <div class="part1">
                 <p>Số USDT khả dụng</p>
                 <p>500 USDT</p>
@@ -151,7 +151,7 @@
             </div>
           </div>
           <div
-            class="col-lg-12 d-flex flex-column justify-content-center align-items-center part2"
+            class="col-12 d-flex flex-column justify-content-center align-items-center part2"
           >
             <p>PNL analysis (24h)</p>
             <p>~125 USDT</p>
@@ -159,10 +159,8 @@
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div
-            class="div-chart d-flex justify-content-center align-items-center"
-          >
+        <div class="col-12 col-sm-6">
+          <div class="div-chart">
             <div id="pie-chart"></div>
           </div>
         </div>
@@ -215,7 +213,7 @@
                   <th scope="col">Số lượng</th>
                   <th scope="col">Giá vốn trung bình</th>
                   <th scope="col">Giá BID</th>
-                  <th scope="col">Lãi/ lỗ (USDT)</th>
+                  <th scope="col">Lãi/ lỗ</th>
                   <th scope="col">Lãi/ lỗ (%)</th>
                 </tr>
               </thead>
@@ -232,74 +230,139 @@
             <div
               class="history-part1 d-flex justify-content-between align-items-start"
             >
-              <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="buy-sell-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#buy-sell-transaction"
-                    type="button"
-                    role="tab"
-                    aria-controls="buy-sell-transaction"
-                    aria-selected="true"
-                    onmousedown="filterAppear(event)"
-                  >
-                    Giao dịch mua bán
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
+              <div>
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="buy-sell-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#buy-sell-transaction"
+                      type="button"
+                      role="tab"
+                      aria-controls="buy-sell-transaction"
+                      aria-selected="true"
+                      onmousedown="filterAppear(event)"
+                    >
+                      Giao dịch mua bán
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="onchain-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#on-chain-transaction"
+                      type="button"
+                      role="tab"
+                      aria-controls="on-chain-transaction"
+                      aria-selected="false"
+                      onmousedown="filterAppear(event)"
+                    >
+                      Giao dịch on-chain
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="filter-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#filter"
+                      type="button"
+                      role="tab"
+                      aria-controls="filter"
+                      aria-selected="false"
+                      onmousedown="filterDisappear(event)"
+                    >
+                      Bộ lọc
+                    </button>
+                  </li>
+
                   <button
                     class="nav-link"
-                    id="onchain-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#on-chain-transaction"
+                    id="filter-tab-canvas"
                     type="button"
                     role="tab"
-                    aria-controls="on-chain-transaction"
                     aria-selected="false"
-                    onmousedown="filterAppear(event)"
-                  >
-                    Giao dịch on-chain
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="filter-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#filter"
-                    type="button"
-                    role="tab"
-                    aria-controls="filter"
-                    aria-selected="false"
-                    onmousedown="filterDisappear(event)"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#canvas-filter"
+                    aria-controls="canvas-filter"
                   >
                     Bộ lọc
                   </button>
-                </li>
-              </ul>
 
-              <div
-                class="d-flex justify-content-start align-items-center filter-bar"
-              >
-                <div
-                  class="d-flex justify-content-between align-items-center time-filter"
-                >
-                  <input type="date" id="time-filter" />
-                  <img
-                    src="./img/arrow-right.png"
-                    class="img-fluid arrow-picture"
-                    alt=""
-                  />
-                  <input type="date" id="time-filter" />
+                  <div
+                    class="offcanvas offcanvas-bottom"
+                    tabindex="-1"
+                    id="canvas-filter"
+                    aria-labelledby="filterLabel"
+                  >
+                    <div class="offcanvas-header">
+                      <p id="filterLabel">Bộ lọc</p>
+                    </div>
+                    <div class="offcanvas-filter-body">
+                      <div
+                        class="d-flex justify-content-between align-items-center transaction-filter-canvas"
+                      >
+                        <div>
+                          <p>Thời gian</p>
+                          <div
+                            class="d-flex justify-content-between align-items-center time-filter offcanvas-time-input"
+                          >
+                            <input type="date" id="time-filter" />
+                            <img
+                              src="./img/arrow-right.png"
+                              class="img-fluid arrow-picture"
+                              alt=""
+                            />
+                            <input type="date" id="time-filter" />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p>Coin</p>
+                          <select
+                            class="form-select coin-filter offcanvas-coin-input"
+                          >
+                            <option selected>-All-</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <p>Mã chuyển tiền TXiD</p>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="transaction-hash-canvas"
+                          placeholder="Nhập TxID"
+                        />
+                      </div>
+                      <button class="filter-button-canvas">Lọc</button>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+
+              <div class="filter-lg">
+                <div class="d-flex align-items-center filter-bar">
+                  <div
+                    class="d-flex justify-content-between align-items-center time-filter"
+                  >
+                    <input type="date" id="time-filter" />
+                    <img
+                      src="./img/arrow-right.png"
+                      class="img-fluid arrow-picture"
+                      alt=""
+                    />
+                    <input type="date" id="time-filter" />
+                  </div>
+
+                  <select class="form-select coin-filter">
+                    <option selected>-All-</option>
+                  </select>
+
+                  <button class="filter-button">Lọc</button>
                 </div>
-
-                <select class="form-select coin-filter">
-                  <option selected>-All-</option>
-                </select>
-
-                <button class="filter-button">Lọc</button>
               </div>
             </div>
 
@@ -311,6 +374,28 @@
                 aria-labelledby="buy-sell-tab"
                 tabindex="0"
               >
+                <div class="filter-small-than-lg">
+                  <div class="d-flex align-items-center filter-in-tab">
+                    <div
+                      class="d-flex justify-content-between align-items-center time-filter"
+                    >
+                      <input type="date" id="time-filter" />
+                      <img
+                        src="./img/arrow-right.png"
+                        class="img-fluid arrow-picture"
+                        alt=""
+                      />
+                      <input type="date" id="time-filter" />
+                    </div>
+
+                    <select class="form-select coin-filter">
+                      <option selected>-All-</option>
+                    </select>
+
+                    <button class="filter-button">Lọc</button>
+                  </div>
+                </div>
+
                 <table
                   id="table"
                   class="table align-middle buy-sell-transaction-table"
@@ -329,14 +414,89 @@
                   </thead>
                   <tbody class="body-transaction"></tbody>
                 </table>
+
+                <table
+                  id="table"
+                  class="table align-middle transaction-table-650px"
+                >
+                  <thead class="head-transaction-650">
+                    <tr>
+                      <th scope="col">Mã giao dịch</th>
+                      <th scope="col">Thời gian</th>
+                      <th scope="col">Cặp giao dịch</th>
+                      <th scope="col">Giá khớp lệnh</th>
+                      <th scope="col">Phí giao dịch</th>
+                      <th scope="col">Số lượng token</th>
+                      <th scope="col">USDT</th>
+                    </tr>
+                  </thead>
+                  <tbody class="body-transaction-650"></tbody>
+                </table>
+
+                <table
+                  id="table"
+                  class="table align-middle transaction-table-580px"
+                >
+                  <thead class="head-transaction-580">
+                    <tr>
+                      <th scope="col">Mã giao dịch</th>
+                      <th scope="col">Thời gian</th>
+                      <th scope="col">Giá khớp lệnh</th>
+                      <th scope="col">Phí giao dịch</th>
+                      <th scope="col">Số lượng token</th>
+                      <th scope="col">USDT</th>
+                    </tr>
+                  </thead>
+                  <tbody class="body-transaction-580"></tbody>
+                </table>
+
+                <table
+                  id="table"
+                  class="table align-middle transaction-table-506px"
+                >
+                  <thead class="head-transaction-506">
+                    <tr>
+                      <th scope="col">Mã giao dịch</th>
+                      <th scope="col">Thời gian</th>
+                      <th scope="col">Token</th>
+                      <th scope="col">Giá khớp lệnh</th>
+                      <th scope="col">USDT</th>
+                    </tr>
+                  </thead>
+                  <tbody class="body-transaction-506"></tbody>
+                </table>
               </div>
+
               <div
                 class="tab-pane fade"
                 id="on-chain-transaction"
                 role="tabpanel"
                 aria-labelledby="onchain-tab"
                 tabindex="0"
-              ></div>
+              >
+                <div class="filter-small-than-lg">
+                  <div class="d-flex align-items-center filter-in-tab">
+                    <div
+                      class="d-flex justify-content-between align-items-center time-filter"
+                    >
+                      <input type="date" id="time-filter" />
+                      <img
+                        src="./img/arrow-right.png"
+                        class="img-fluid arrow-picture"
+                        alt=""
+                      />
+                      <input type="date" id="time-filter" />
+                    </div>
+
+                    <select class="form-select coin-filter">
+                      <option selected>-All-</option>
+                    </select>
+
+                    <button class="filter-button">Lọc</button>
+                  </div>
+                </div>
+              </div>
+
               <div
                 class="tab-pane fade"
                 id="filter"
@@ -362,10 +522,7 @@
 
                   <div>
                     <p>Coin</p>
-                    <select
-                      class="form-select coin-filter"
-                      id="coin-information"
-                    >
+                    <select class="form-select coin-filter">
                       <option selected>-All-</option>
                     </select>
                   </div>
@@ -461,7 +618,7 @@
             breakpoint: 1400,
             options: {
               chart: {
-                width: "350",
+                width: "380",
               },
             },
           },
@@ -469,7 +626,23 @@
             breakpoint: 1200,
             options: {
               chart: {
+                width: "360",
+              },
+            },
+          },
+          {
+            breakpoint: 992,
+            options: {
+              chart: {
                 width: "330",
+              },
+            },
+          },
+          {
+            breakpoint: 768,
+            options: {
+              chart: {
+                width: "300",
               },
             },
           },
@@ -557,19 +730,17 @@
     </script>
 
     <script>
-      var select = document.querySelector(".coin-filter");
-      var coinInformation = document.getElementById("coin-information");
+      var select = document.querySelectorAll(".coin-filter");
 
       function inToSelect(data) {
-        for (var i = 0; i < data.length; i++) {
-          var name = data[i];
-          var option1 = document.createElement("option");
-          option1.innerHTML = name.name;
-          select.appendChild(option1);
-
-          var option2 = document.createElement("option");
-          option2.innerHTML = name.name;
-          coinInformation.appendChild(option2);
+        for (i = 0; i < select.length; i++) {
+          for (j = 0; j < data.length; j++) {
+            var name = data[j];
+            var option = document.createElement("option");
+            option.innerHTML = name.name;
+            select[i].appendChild(option);
+          }
+          
         }
       }
 
@@ -577,17 +748,6 @@
     </script>
 
     <script>
-      var pushElememt = {
-        time: "",
-        transaction: "Mua",
-        tradingPair: "",
-        name: "",
-        orderPrice: "",
-        fee: "",
-        quantityOfToken: "",
-        quantityOfUSDT: "",
-      };
-
       var transactionTable = document.querySelector(".body-transaction");
 
       function inToTransactionTable(data) {
@@ -662,12 +822,210 @@
     <script>
       var filterBar = document.querySelector(".filter-bar");
       function filterDisappear(event) {
-        filterBar.setAttribute("class" , "disappear");
+        filterBar.setAttribute("class", "disappear");
       }
 
       function filterAppear(event) {
-        filterBar.setAttribute("class" , "d-flex justify-content-start align-items-center filter-bar appear");
+        filterBar.setAttribute(
+          "class",
+          "d-flex justify-content-start align-items-center filter-bar appear"
+        );
       }
+    </script>
+
+    <script>
+      var transactionTable650 = document.querySelector(".body-transaction-650");
+
+      function inToTransactionTable650(data) {
+        for (var i = 0; i < data.length; i++) {
+          var historyTable = data[i];
+          let row650 = document.createElement("tr");
+
+          let firstBox650 = document.createElement("td");
+          firstBox650.innerHTML = code[i];
+          row650.appendChild(firstBox650);
+
+          let key650 = [
+            "time",
+            "tradingPair",
+            "orderPrice",
+            "fee",
+            "quantityOfToken",
+            "quantityOfUSDT",
+          ];
+
+          for (var j = 0; j < key650.length; j++) {
+            let cell650 = document.createElement("td");
+
+            cell650.innerHTML = historyTable[key650[j]];
+            row650.appendChild(cell650);
+          }
+
+          transactionTable650.appendChild(row650);
+        }
+      }
+
+      inToTransactionTable650(transactionOfAccount);
+
+      var transactionTable580 = document.querySelector(".body-transaction-580");
+
+      function inToTransactionTable580(data) {
+        for (var i = 0; i < data.length; i++) {
+          var historyTable = data[i];
+          let row580 = document.createElement("tr");
+
+          let firstBox580 = document.createElement("td");
+          firstBox580.innerHTML = code[i];
+          row580.appendChild(firstBox580);
+
+          let key580 = [
+            "time",
+            "orderPrice",
+            "fee",
+            "quantityOfToken",
+            "quantityOfUSDT",
+          ];
+
+          for (var j = 0; j < key580.length; j++) {
+            let cell580 = document.createElement("td");
+
+            cell580.innerHTML = historyTable[key580[j]];
+            row580.appendChild(cell580);
+          }
+
+          transactionTable580.appendChild(row580);
+        }
+      }
+
+      inToTransactionTable580(transactionOfAccount);
+
+      var transactionTable506 = document.querySelector(".body-transaction-506");
+
+      function inToTransactionTable506(data) {
+        for (var i = 0; i < data.length; i++) {
+          var historyTable = data[i];
+          let row506 = document.createElement("tr");
+
+          let firstBox506 = document.createElement("td");
+          firstBox506.innerHTML = code[i];
+          row506.appendChild(firstBox506);
+
+          let key506 = [
+            "time",
+            "quantityOfToken",
+            "orderPrice",
+
+            "quantityOfUSDT",
+          ];
+
+          for (var j = 0; j < key506.length; j++) {
+            let cell506 = document.createElement("td");
+
+            cell506.innerHTML = historyTable[key506[j]];
+            row506.appendChild(cell506);
+          }
+
+          transactionTable506.appendChild(row506);
+        }
+      }
+
+      inToTransactionTable506(transactionOfAccount);
+
+      var td4Table506 = document.querySelectorAll(
+        ".body-transaction-506 tr td:nth-child(4)"
+      );
+
+      var td5Table506 = document.querySelectorAll(
+        ".body-transaction-506 tr td:nth-child(5)"
+      );
+
+      var td3Table580 = document.querySelectorAll(
+        ".body-transaction-580 tr td:nth-child(3)"
+      );
+
+      var td4Table580 = document.querySelectorAll(
+        ".body-transaction-580 tr td:nth-child(4)"
+      );
+
+      var td6Table580 = document.querySelectorAll(
+        ".body-transaction-580 tr td:nth-child(6)"
+      );
+
+      var td4Table650 = document.querySelectorAll(
+        ".body-transaction-650 tr td:nth-child(4)"
+      );
+
+      var td5Table650 = document.querySelectorAll(
+        ".body-transaction-650 tr td:nth-child(5)"
+      );
+
+      var td7Table650 = document.querySelectorAll(
+        ".body-transaction-650 tr td:nth-child(7)"
+      );
+
+      function innerUSDT3() {
+        for (i = 0; i <= td4Table506.length; i++) {
+          td4Table506[i].textContent =
+            parseFloat(transactionOfAccount[i].orderPrice).toLocaleString(
+              "en-US",
+              {
+                maximumFractionDigits: "5",
+              }
+            ) + " USDT";
+
+          td5Table506[i].textContent =
+            parseFloat(transactionOfAccount[i].quantityOfUSDT).toLocaleString(
+              "en-US",
+              {
+                maximumFractionDigits: "5",
+              }
+            ) + " USDT";
+
+          td3Table580[i].textContent =
+            parseFloat(transactionOfAccount[i].orderPrice).toLocaleString(
+              "en-US",
+              {
+                maximumFractionDigits: "5",
+              }
+            ) + " USDT";
+
+          td4Table580[i].textContent =
+            parseFloat(transactionOfAccount[i].fee).toLocaleString("en-US", {
+              maximumFractionDigits: "5",
+            }) + " USDT";
+
+          td6Table580[i].textContent =
+            parseFloat(transactionOfAccount[i].quantityOfUSDT).toLocaleString(
+              "en-US",
+              {
+                maximumFractionDigits: "5",
+              }
+            ) + " USDT";
+
+          td4Table650[i].textContent =
+            parseFloat(transactionOfAccount[i].orderPrice).toLocaleString(
+              "en-US",
+              {
+                maximumFractionDigits: "5",
+              }
+            ) + " USDT";
+
+          td5Table650[i].textContent =
+            parseFloat(transactionOfAccount[i].fee).toLocaleString("en-US", {
+              maximumFractionDigits: "5",
+            }) + " USDT";
+
+          td7Table650[i].textContent =
+            parseFloat(transactionOfAccount[i].quantityOfUSDT).toLocaleString(
+              "en-US",
+              {
+                maximumFractionDigits: "5",
+              }
+            ) + " USDT";
+        }
+      }
+
+      innerUSDT3();
     </script>
   </body>
 </html>

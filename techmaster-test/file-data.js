@@ -358,8 +358,8 @@ var transactionOfAccount = [
       name: "BTC",
       orderPrice: "27643.07",
       fee: "2",
-      quantityOfToken: "0,02365 BTC",
-      quantityOfUSDT: "-2500 USDT",
+      quantityOfToken: "+0,02365 BTC",
+      quantityOfUSDT: "2500 USDT",
     },
     {
       time: "2022-06-20 11:50",
@@ -368,8 +368,8 @@ var transactionOfAccount = [
       name: "RUNE",
       orderPrice: "2.003",
       fee: "1.75",
-      quantityOfToken: "275 RUNE",
-      quantityOfUSDT: "+275 USDT",
+      quantityOfToken: "-275 RUNE",
+      quantityOfUSDT: "275 USDT",
     },
     {
       time: "2022-06-17 21:00",
@@ -378,8 +378,8 @@ var transactionOfAccount = [
       name: "ETH",
       orderPrice: "1195.82",
       fee: "4.78",
-      quantityOfToken: "0.56 ETH",
-      quantityOfUSDT: "-2000 USDT",
+      quantityOfToken: "+0.56 ETH",
+      quantityOfUSDT: "2000 USDT",
     },
   ];
 

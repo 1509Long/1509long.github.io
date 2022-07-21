@@ -76,6 +76,18 @@ a {
     html {
         font-size: 7px;
     }
+
+    .swap-box-lg { 
+        display:none;
+    }
+
+    .swap-box-smaller-than-lg {
+        display: block !important;
+    }
+
+    .additional-information {
+        margin: 2.5rem 0 9rem !important;
+    }
 }
 
 @media screen and (max-width : 767px) {
@@ -85,7 +97,38 @@ a {
 }
 
 @media screen and (max-width : 575px) {
+    .statistics {
+        display: none;
+    }
 
+    .responsive-bonus {
+        margin-bottom: 3.5rem;
+        display: block !important;
+    }
+
+    .time-bar {
+        gap: 2rem !important;
+    }
+
+    .time-button {
+        gap: 0.5rem !important;
+    }
+
+    .canvas-price-info , .exchange-rate-canvas {
+        display: none;
+    }
+
+    .canvas-table-price-info {
+        display: block !important;
+    }
+
+    .confirmation-buy-modal , .confirmation-sell-modal {
+        width: 340px;
+    }
+
+    .result-modal , .no-value-sell-modal , .no-value-buy-modal {
+        width: 250px !important;
+    }
 }
 
 .title {
@@ -126,6 +169,7 @@ a {
     font-weight: 600;
     color: #1F1F1F;
 }
+
 /* Time and indicators */
 .time-bar {
     gap: 4rem;
@@ -134,6 +178,7 @@ a {
 
 .time-button {
     gap: 1rem;
+    margin-right: 2rem;
 }
 
 .time-setting , .indicators {
@@ -145,7 +190,9 @@ a {
     border: 0.5px solid #8B8C9B;
 }
 
-.indicators div img {
+.fa-chart-bar {
+    color: #8B8C9B;
+    font-size: 1.8rem;
     padding-left: 0.7rem;
 }
 
@@ -163,13 +210,9 @@ a {
     color: #8B8C9B;
 }
 
-/* .active {
-    background-color: #8b8c9b !important;
+.fa-chart-bar:focus , .fa-chart-bar:hover {
+    color: #fff;
 }
-
-.disactive {
-    background-color: #fff;
-} */
 
 /* Swap Box */
 .swap-box , .statistics {
@@ -259,8 +302,10 @@ a {
     box-shadow: 0 0 0 0;
 }
 
-.USDT {
-    margin-bottom: 1.25rem;
+.gap-1-25 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 .part1-swap {
@@ -322,17 +367,125 @@ a {
     border-radius: 0.8rem;
 }
 
-#swap-link:hover , #swap-link:focus {
+#swap-link:hover , #swap-link:focus, .transaction-button:hover , .transaction-button:focus {
     background-color: #0A66DF;
     color: #fff;
+}
+
+/* Responsive swap-box */
+.swap-box-smaller-than-lg {
+    width: 100%;
+    background-color: #F6F9FC;
+    display: none;
+}
+
+.transaction-button {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 1rem 3.5rem;
+    background-color: #1576F5;
+    border: 0;
+    border-radius: 0;
+}
+
+/* Offcanvas */
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+    height: 47rem !important;
+}
+
+.offcanvas-body {
+    padding: 1.75rem 3rem;
+}
+
+#buy-button-canvas , #sell-button-canvas {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #717171;
+    padding: 1rem 3.5rem;
+    border-radius: 0.5rem;
+    border: 0.1px solid #F4F5F6;
+    margin-right: 0.75rem;
+}
+
+.click-buy-canvas {
+    color: #fff !important;
+    border-color: #05B169 !important;
+    background-color: #05B169;
+}
+
+.click-sell-canvas {
+    color: #fff !important;
+    border-color: #E95F67 !important;
+    background-color: #E95F67;
+}
+
+.canvas-input-part1 {
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-label {
+    width: 15rem;
+    font-size: 1.7rem;
+    color: #717171;
+    font-weight: 500;
+}
+
+#pay-USDT-canvas , #receive-token-auto , #sell-token-canvas , #receive-USDT-auto {
+    height: 5.2rem;
+    font-size: 1.7rem;
+}
+
+.canvas-img {
+    width: 3.9rem !important;
+}
+
+.canvas-input {
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.8rem;
+}
+
+.canvas-table-price-info {
+    margin-top: 0;
+    border-bottom: none;
+    display: none;
+}
+
+.canvas-table-price-info tr td , .exchange-rate-canvas p {
+    font-size: 1.8rem !important;
+}
+
+.canvas-price-info tr td {
+    font-size: 2rem;
+}
+
+.canvas-price-info tr:first-child td {
+    padding-bottom: 2rem;
+}
+
+.exchange-rate-canvas {
+    padding: 2rem 0 0;
+}
+
+#swap-link-canvas {
+    display: block;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 1.8rem 0;
+    background-color: #1576F5;
+    border-radius: 0.8rem;
 }
 
 /* BTC information website and statistics table */
 .additional-information {
     margin: 7.7rem 0 5rem;
 }
-.about-token p:first-child , .statistics p {
-    font-size: 1.5rem;
+.about-token p:first-child , .statistics p , .responsive-bonus p {
+    font-size: 1.8rem;
     font-weight: 600;
     color: #1576F5;
     margin-bottom: 2.5rem;
@@ -353,7 +506,7 @@ a {
     font-weight: 400;
 }
 
-.statistics-table tbody tr td {
+.statistics-table tbody tr td , .token-price-information tbody tr td , .token-market-information tbody tr td {
     font-size: 1.3rem;
     font-weight: 400;
     color: #1F1F1F;
@@ -361,7 +514,7 @@ a {
     border-bottom: 0.1rem solid #DFDFDF;
 }
 
-.statistics-table tbody tr td:last-child {
+.statistics-table tbody tr td:last-child , .token-price-information tbody tr td:last-child , .token-market-information tbody tr td:last-child {
     text-align: end;
 }
 
@@ -371,6 +524,15 @@ a {
 
 .statistics-table tbody tr:first-child td {
     padding-top: 0;
+}
+
+/* Responsive BTC information website and statistics table*/
+.token-price-information , .token-market-information {
+    width: 45% ;
+}
+
+.responsive-bonus {
+    display: none;
 }
 
 /* Scrollbar */

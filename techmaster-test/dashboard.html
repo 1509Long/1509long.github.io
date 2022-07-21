@@ -26,7 +26,7 @@
     />
 
     <link rel="stylesheet" href="./dashboard.css" />
-    <link rel="stylesheet" href="./navbar-search.css" /> 
+    <link rel="stylesheet" href="./navbar-search.css" />
   </head>
   <body>
     <div class="container-lg">
@@ -172,7 +172,7 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-12 col-lg-8">
           <div class="d-flex align-items-center time-bar">
             <p>Thời gian</p>
             <div class="d-flex align-items-center time-button">
@@ -222,7 +222,7 @@
             <button type="button" class="btn btn-outline-secondary indicators">
               <div class="d-flex align-items-center">
                 <span>Chỉ báo kỹ thuật</span>
-                <img src="./img/Group 7.png" class="img-fluid" alt="" />
+                <i class="far fa-chart-bar"></i>
               </div>
             </button>
           </div>
@@ -230,7 +230,7 @@
           <div id="candlestick-chart"></div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 swap-box-lg">
           <div class="swap-box">
             <div class="head-swap-box">
               <div id="buy-button" class="full-border" onclick="clickBuy()">
@@ -249,7 +249,7 @@
               <div
                 class="d-flex justify-content-between align-items-center part1-swap"
               >
-                <div>
+                <div class="gap-1-25">
                   <div class="input-group has-validation USDT">
                     <input
                       type="text"
@@ -327,7 +327,7 @@
               <div
                 class="d-flex justify-content-between align-items-center part1-swap"
               >
-                <div>
+                <div class="gap-1-25">
                   <div class="input-group has-validation USDT">
                     <input
                       type="text"
@@ -405,7 +405,55 @@
       </div>
 
       <div class="row additional-information">
-        <div class="col-sm-8">
+        <div class="responsive-bonus">
+          <p>Biến động</p>
+          <div
+            class="d-flex justify-content-between statistics-table-version-2"
+          >
+            <table class="table token-price-information">
+              <tbody>
+                <tr>
+                  <td>7D</td>
+                  <td class="increase">+0.89%</td>
+                </tr>
+                <tr>
+                  <td>1M</td>
+                  <td class="decrease">-28.33%</td>
+                </tr>
+                <tr>
+                  <td>3M</td>
+                  <td class="decrease">-47.81%</td>
+                </tr>
+                <tr>
+                  <td>1Y</td>
+                  <td class="decrease">-56.36%</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table token-market-information">
+              <tbody>
+                <tr>
+                  <td>Highest Price 1Y</td>
+                  <td>69,082.80</td>
+                </tr>
+                <tr>
+                  <td>Lowest Price 1Y</td>
+                  <td>22,615.68</td>
+                </tr>
+                <tr>
+                  <td>ATH</td>
+                  <td>69,028.80</td>
+                </tr>
+                <tr>
+                  <td>Market Cap</td>
+                  <td>$398.62B</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-12 col-sm-8">
           <div class="about-token">
             <p>Thông tin token</p>
             <p>
@@ -700,6 +748,277 @@
                 <a href="./dashboard.html" id="swap-link">Đã hiểu</a>
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Responsive BUY - SELL BUTTON -->
+    <div class="position-fixed bottom-0 start-0 swap-box-smaller-than-lg">
+      <button
+        class="btn transaction-button"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom"
+      >
+        Giao dịch
+      </button>
+
+      <div
+        class="offcanvas offcanvas-bottom"
+        tabindex="-1"
+        id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel"
+      >
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+          <div class="d-flex align-items-center">
+            <div
+              id="buy-button-canvas"
+              class="click-buy-canvas"
+              onclick="clickBuyCanvas()"
+            >
+              MUA
+            </div>
+            <div id="sell-button-canvas" onclick="clickSellCanvas()">BÁN</div>
+          </div>
+
+          <div class="buy-canvas">
+            <div class="row gx-5">
+              <div class="col-12 col-sm-7">
+                <div
+                  class="d-flex justify-content-between align-items-center part1-swap canvas-input"
+                >
+                  <div class="canvas-input-part1">
+                    <div class="d-flex align-items-center">
+                      <label for="pay-USDT-canvas" class="form-label margin"
+                        >Số lượng</label
+                      >
+                      <div class="input-group has-validation USDT">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="pay-USDT-canvas"
+                          aria-describedby="inputGroupPrepend"
+                          placeholder="20,636.737 USDT"
+                          onmouseleave="getValueOfUSDTCanvas(this)"
+                        />
+                        <span class="input-group-text" id="inputGroupPrepend"
+                          ><img
+                            src="./img/icon_USDT.png"
+                            class="img-fluid canvas-img"
+                            alt=""
+                        /></span>
+                      </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                      <label for="pay-USDT-canvas" class="form-label"></label>
+                      <div class="input-group has-validation token">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="receive-token-auto"
+                          aria-describedby="inputGroupPrepend"
+                          disabled
+                        />
+                        <span class="input-group-text" id="inputGroupPrepend"
+                          ><img
+                            src="./img/1.png"
+                            class="img-fluid canvas-img"
+                            alt=""
+                        /></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div onclick="clickSellCanvas()" class="pointer">
+                    <img src="./img/Artboard 1.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
+
+                <div class="part3-swap exchange-rate-canvas">
+                  <p>Tỉ giá quy đổi: 1 BTC ~ <span>20,636.74</span> USDT</p>
+                  <p>
+                    Phí giao dịch: 0.075% sẽ tính vào phần USDT trên mỗi giao
+                    dịch
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-5 canvas-price-info">
+                <table
+                  class="table table-borderless align-middle info-account-swap-USDT-to-token"
+                >
+                  <tbody>
+                    <tr class="swap-USDT-to-token">
+                      <td>Số USDT khả dụng</td>
+                      <td>500 USDT</td>
+                    </tr>
+                    <tr>
+                      <td>Số lượng BTC đang sở hữu</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Lời lỗ (USDT)</td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-12">
+                <div class="part2-swap canvas-table-price-info">
+                  <table
+                    class="table table-borderless align-middle info-account-swap-USDT-to-token"
+                  >
+                    <tbody>
+                      <tr class="swap-USDT-to-token">
+                        <td>Số USDT khả dụng</td>
+                        <td>500 USDT</td>
+                      </tr>
+                      <tr>
+                        <td>Số lượng BTC đang sở hữu</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>Lời lỗ (USDT)</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn button-canvas" id="swap-button">
+              <a
+                id="swap-link-canvas"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                href="#buy-transaction-confirmation"
+                role="button"
+                onclick="autoInnerBuyInfoCanvas()"
+                >QUY ĐỔI</a
+              >
+            </button>
+          </div>
+
+          <div class="sell-canvas disappear">
+            <div class="row gx-5">
+              <div class="col-12 col-sm-7">
+                <div
+                  class="d-flex justify-content-between align-items-center part1-swap canvas-input"
+                >
+                  <div class="canvas-input-part1">
+                    <div class="d-flex align-items-center">
+                      <label for="pay-USDT-canvas" class="form-label margin"
+                        >Số lượng</label
+                      >
+                      <div class="input-group has-validation USDT">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="sell-token-canvas"
+                          aria-describedby="inputGroupPrepend"
+                          placeholder="0 BTC"
+                          onmouseleave="getValueOfTokenCanvas(this)"
+                        />
+                        <span class="input-group-text" id="inputGroupPrepend"
+                          ><img
+                            src="./img/1.png"
+                            class="img-fluid canvas-img"
+                            alt=""
+                        /></span>
+                      </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                      <label for="pay-USDT-canvas" class="form-label"></label>
+                      <div class="input-group has-validation token">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="receive-USDT-auto"
+                          aria-describedby="inputGroupPrepend"
+                          disabled
+                        />
+                        <span class="input-group-text" id="inputGroupPrepend"
+                          ><img
+                            src="./img/icon_USDT.png"
+                            class="img-fluid canvas-img"
+                            alt=""
+                        /></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div onclick="clickBuyCanvas()" class="pointer">
+                    <img src="./img/Artboard 1.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
+
+                <div class="part3-swap exchange-rate-canvas">
+                  <p>Tỉ giá quy đổi: 1 BTC ~ <span>20,636.74</span> USDT</p>
+                  <p>
+                    Phí giao dịch: 0.075% sẽ tính vào phần USDT trên mỗi giao
+                    dịch
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-5 canvas-price-info">
+                <table
+                  class="table table-borderless align-middle info-account-swap-token-to-USDT"
+                >
+                  <tbody>
+                    <tr>
+                      <td>Số lượng BTC đang sở hữu</td>
+                      <td>0</td>
+                    </tr>
+                    <tr class="swap-token-to-USDT">
+                      <td>Lời lỗ (USDT)</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Số USDT khả dụng</td>
+                      <td>500 USDT</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-12">
+                <div class="part2-swap canvas-table-price-info">
+                  <table
+                    class="table table-borderless align-middle info-account-swap-token-to-USDT"
+                  >
+                    <tbody>
+                      <tr>
+                        <td>Số lượng BTC đang sở hữu</td>
+                        <td>0</td>
+                      </tr>
+                      <tr class="swap-token-to-USDT">
+                        <td>Lời lỗ (USDT)</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>Số USDT khả dụng</td>
+                        <td>500 USDT</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn button-canvas" id="swap-button">
+              <a
+                id="swap-link-canvas"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                href="#sell-transaction-confirmation"
+                role="button"
+                onclick="autoInnerSellInfoCanvas()"
+                >QUY ĐỔI</a
+              >
+            </button>
           </div>
         </div>
       </div>
@@ -1107,6 +1426,12 @@
     </script>
 
     <script>
+      var noValueBuy = document.querySelector(".no-value-buy-modal");
+      var confirmationBuy = document.querySelector(".confirmation-buy-modal");
+
+      var noValueSell = document.querySelector(".no-value-sell-modal");
+      var confirmationSell = document.querySelector(".confirmation-sell-modal");
+
       function getValueOfUSDT(x) {
         if (x.value > 0) {
           let realUSDTtoBuy = x.value - x.value * (0.075 / 100);
@@ -1133,9 +1458,6 @@
       }
 
       function autoInnerBuyInfo() {
-        let noValueBuy = document.querySelector(".no-value-buy-modal");
-        let confirmationBuy = document.querySelector(".confirmation-buy-modal");
-
         let payUSDT = document.getElementById("pay-USDT").value;
         let receiveToken = document.getElementById("receive-token").value;
 
@@ -1160,11 +1482,6 @@
       }
 
       function autoInnerSellInfo() {
-        let noValueSell = document.querySelector(".no-value-sell-modal");
-        let confirmationSell = document.querySelector(
-          ".confirmation-sell-modal"
-        );
-
         let sellToken = document.getElementById("sell-token").value;
         let receiveUSDT = document.getElementById("receive-USDT").value;
 
@@ -1189,15 +1506,111 @@
           }
         }
       }
-    </script>
 
-    
-    
-    <!-- <script>
-      function timeClick() {
-        var backGround = document.querySelector(".active");
-        backGround.setAttribute("class" , "btn btn-outline-secondary time-setting disactive")
+      // Responsive --- Offcanvas
+      var buyCanvas = document.getElementById("buy-button-canvas");
+      var sellCanvas = document.getElementById("sell-button-canvas");
+
+      var buyTab = document.querySelector(".buy-canvas")
+      var sellTab = document.querySelector(".sell-canvas")
+
+      function clickSellCanvas() {
+        buyCanvas.removeAttribute("class");
+        sellCanvas.setAttribute("class" , "click-sell-canvas");
+
+        buyTab.setAttribute("class", "disappear");
+        sellTab.setAttribute("class", "sell-canvas appear");
+
       }
-    </script> -->
+
+      function clickBuyCanvas() {
+        sellCanvas.removeAttribute("class");
+        buyCanvas.setAttribute("class" , "click-buy-canvas");
+
+        sellTab.setAttribute("class", "disappear");
+        buyTab.setAttribute("class", "buy-canvas appear");
+
+      }
+
+
+      function getValueOfUSDTCanvas(x) {
+        if (x.value > 0) {
+          let realUSDTCanvas = x.value - x.value * (0.075 / 100);
+          let tokenValueCanvas = (realUSDTCanvas / 1000).toLocaleString(
+            "en-US",
+            { maximumFractionDigits: "5" }
+          );
+
+          let innerValue = document.getElementById("receive-token-auto");
+          innerValue.setAttribute("value", tokenValueCanvas);
+        }
+      }
+
+      function autoInnerBuyInfoCanvas() {
+        let payUSDTCanvas = document.getElementById("pay-USDT-canvas").value;
+        let receiveTokenAuto =
+          document.getElementById("receive-token-auto").value;
+
+        if (payUSDTCanvas === "") {
+          noValueBuy.setAttribute(
+            "class",
+            "modal-content no-value-buy-modal appear"
+          );
+          confirmationBuy.setAttribute(
+            "class",
+            "modal-content confirmation-buy-modal disappear"
+          );
+        } else {
+          let innerBuyForm = document.querySelectorAll(".inner-buy-form-USDT");
+          for (i = 0; i <= innerBuyForm.length; i++) {
+            document.querySelectorAll(".inner-buy-form-USDT")[i].innerHTML =
+              payUSDTCanvas;
+            document.querySelectorAll(".inner-buy-form-token")[i].innerHTML =
+              receiveTokenAuto;
+          }
+        }
+      }
+
+      function getValueOfTokenCanvas(x) {
+        if (x.value > 0) {
+          let valueOfTokenCanvas = x.value * informationTokenHomePage[0].price;
+          let realUSDTtoReceiveCanvas = (
+            valueOfTokenCanvas -
+            valueOfTokenCanvas * (0.075 / 100)
+          ).toLocaleString("en-US", { maximumFractionDigits: "5" });
+
+          let receiveUSDTAuto = document.getElementById("receive-USDT-auto");
+          receiveUSDTAuto.setAttribute("value", realUSDTtoReceiveCanvas);
+        }
+      }
+
+      function autoInnerSellInfoCanvas() {
+        let sellTokenCanvas =
+          document.getElementById("sell-token-canvas").value;
+        let receiveUSDTAuto =
+          document.getElementById("receive-USDT-auto").value;
+
+        if (sellTokenCanvas === "") {
+          noValueSell.setAttribute(
+            "class",
+            "modal-content no-value-sell-modal appear"
+          );
+          confirmationSell.setAttribute(
+            "class",
+            "modal-content confirmation-sell-modal disappear"
+          );
+        } else {
+          let innerSellForm = document.querySelectorAll(
+            ".inner-sell-form-USDT"
+          );
+          for (i = 0; i <= innerSellForm.length; i++) {
+            document.querySelectorAll(".inner-sell-form-USDT")[i].innerHTML =
+              receiveUSDTAuto;
+            document.querySelectorAll(".inner-sell-form-token")[i].innerHTML =
+              sellTokenCanvas;
+          }
+        }
+      }
+    </script>
   </body>
 </html>
