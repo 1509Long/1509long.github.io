@@ -64,7 +64,7 @@ a {
 }
 
 /* Logo - Login */
-.logo-infinity {
+.logo-attlas {
     width: 15.5rem;
 }
 
@@ -207,11 +207,11 @@ a {
 Bước 1: Vì body ôm trọn lấy phần container nên cần đặt body có height = 100vh (tương đương body = 100% height của màn hình
 Bước 2: Body với thẻ display: flex , justify content và align-content để căn giữa */
 @media screen and (max-width : 991px) {
-    .infinity-big-logo-login {
+    .attlas-big-logo-login {
         display: none !important;
     }
 
-    .infinity-login-mini {
+    .attlas-login-mini {
         display: block !important;
     }
 
@@ -224,14 +224,14 @@ Bước 2: Body với thẻ display: flex , justify content và align-content đ
     width: 10rem;
 }
 
-.infinity-login-mini p {
+.attlas-login-mini p {
     color: #392dc8;
     margin-top: 1.5rem;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-.infinity-login-mini {
+.attlas-login-mini {
     margin-bottom: 2rem;
     display: none;
 }
