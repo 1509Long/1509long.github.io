@@ -38,21 +38,6 @@
         aria-describedby="inputGroupPrepend"
       />
     </div>
-
-    <table id="table" class="table align-middle">
-      <thead>
-        <tr>
-          <th scope="col" class="line1"></th>
-          <th scope="col">Tài sản</th>
-          <th scope="col">Giá gần nhất</th>
-          <th scope="col" class="line4">Biến động 24h</th>
-          <th scope="col" class="line5">Khối lượng 24h</th>
-          <th scope="col" class="line6"></th>
-        </tr>
-      </thead>
-      <tbody id="table-body"></tbody>
-    </table>
-
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
@@ -65,31 +50,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="./techmaster-test/file-data.js"></script>
-    <script src="./information.js"></script>
-
-    <script>
-      var table = document.getElementById("table-body");
-      function inToTable(data) {
-        for (var i = 0; i < data.length; i++) {
-          var infomation = data[i];
-
-          var row = document.createElement("tr");
-
-          var key = ["box1", "asset", "price", "change", "volumn", "link"];
-
-          for (var j = 0; j < key.length; j++) {
-            var cell = document.createElement("td");
-            cell.innerHTML = infomation[key[j]];
-
-            row.appendChild(cell);
-          }
-
-          table.appendChild(row);
-        }
-      }
-
-      inToTable(informationTokenHomePage);
-    </script>
+    <script src="./copy.js"></script>
   </body>
 </html>

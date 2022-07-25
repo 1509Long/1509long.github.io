@@ -53,6 +53,7 @@
       <tbody id="table-body"></tbody>
     </table>
 
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
@@ -69,14 +70,15 @@
     <script src="./information.js"></script>
 
     <script>
-      var table = document.getElementById("table-body");
-      function inToTable(data) {
+            function inToTable(data) {
         for (var i = 0; i < data.length; i++) {
           var infomation = data[i];
 
           var row = document.createElement("tr");
+          var row2 = document.createElement("tr");
 
           var key = ["box1", "asset", "price", "change", "volumn", "link"];
+          var key2 = ["box1", "asset", "price", "change", "link"];
 
           for (var j = 0; j < key.length; j++) {
             var cell = document.createElement("td");
@@ -86,6 +88,14 @@
           }
 
           table.appendChild(row);
+
+          for (var e = 0; e < key2.length; e++) {
+            var cell2 = document.createElement("td");
+            cell2.innerHTML = infomation[key2[e]];
+
+            row2.appendChild(cell2);
+          }
+          responTable.appendChild(row2);
         }
       }
 

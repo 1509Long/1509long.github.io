@@ -1,4 +1,5 @@
 // Data token file (all of html)
+
 var informationTokenHomePage = [
     {
       box1: '<i class="fas fa-star watch-list" onclick="yellowStar(this)"></i>',
@@ -264,6 +265,7 @@ var informationTokenHomePage = [
 
 
 // Assets of the account file (wallet.html)
+
 var AssetsOfAccount = [
     {
       asset:
@@ -334,6 +336,17 @@ var AssetsOfAccount = [
       pnl: "-15.05%",
     },
   ];
+
+
+// Data chart file (wallet.html)
+var yourAssets = {
+    BNB: "2500USDT",
+    ETH: "2000USDT",
+    BTC: "1500USDT",
+    KAVA: "500USDT",
+    RUNE: "450USDT",
+    STORJ: "350USDT",
+  };
 
 
 // Transaction History file (wallet.html)

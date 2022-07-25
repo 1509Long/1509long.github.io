@@ -571,12 +571,12 @@
       function parseValues() {
         for (i = 0; i < AssetsOfAccount.length; i++) {
           valuesForChart.push(parseInt(AssetsOfAccount[i].USDT));
-          keysForChart.push(AssetsOfAccount[i].name);
         }
+        return valuesForChart;
       }
       parseValues();
 
-      console.log(keysForChart);
+      console.log(valuesForChart);
 
       // function parseValues() {
       //   for (i = 0; i < Object.values(yourAssets).length; i++) {
@@ -592,7 +592,7 @@
           width: "400",
         },
         series: valuesForChart,
-        labels: keysForChart,
+        labels: Object.keys(yourAssets),
         colors: [
           "#181b62",
           "#23268a",
