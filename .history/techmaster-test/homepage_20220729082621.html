@@ -536,15 +536,13 @@
 
       function fillColorForPrice() {
         let decreaseNumber = [2, 3, 8, 13, 15, 16, 22, 24];
-        let arr = [];
-        for (i = 0; i < decreaseNumber.length; i++) {
-          arr.push(decreaseNumber[i] + 26);
-        }
+        let arr = [...decreaseNumber];
+        arr.concat(decreaseNumber);
+        console.log(arr)
 
-        let arrConcat = decreaseNumber.concat(arr);
-        for (j = 0; j < arrConcat.length; j++) {
-          tableInfoPrice[arrConcat[j]].setAttribute("class", "decrease");
-          table2InfoPrice[arrConcat[j]].setAttribute("class", "decrease");
+        for (i = 0; i < decreaseNumber.length; i++) {
+          tableInfoPrice[decreaseNumber[i]].setAttribute("class", "decrease");
+          table2InfoPrice[decreaseNumber[i]].setAttribute("class", "decrease");
         }
       }
 

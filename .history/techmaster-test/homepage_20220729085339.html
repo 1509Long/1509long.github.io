@@ -539,6 +539,7 @@
         let arr = [];
         for (i = 0; i < decreaseNumber.length; i++) {
           arr.push(decreaseNumber[i] + 26);
+
         }
 
         let arrConcat = decreaseNumber.concat(arr);
@@ -550,19 +551,19 @@
 
       fillColorForPrice();
 
-      function watchlistDisappear() {
-        let disappearTR = document.querySelectorAll(".watchlist-table tr");
-        let yellowStar = document.querySelectorAll(
-          ".watchlist-table tr td:first-child i"
-        );
+      // function watchlistDisappear() {
+      //   let disappearTR = document.querySelectorAll(".watchlist-table tr");
+      //   let yellowStar = document.querySelectorAll(
+      //     ".watchlist-table tr td:first-child i"
+      //   );
 
-        for (i = 0; i < disappearTR.length; i++) {
-          disappearTR[i].classList.add("disappear");
-          yellowStar[i].classList.add("yellow");
-        }
-      }
+      //   for (i = 0; i < disappearTR.length; i++) {
+      //     disappearTR[i].classList.add("disappear");
+      //     yellowStar[i].classList.add("yellow");
+      //   }
+      // }
 
-      watchlistDisappear();
+      // watchlistDisappear();
     </script>
   </body>
 </html>
