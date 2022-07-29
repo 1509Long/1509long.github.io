@@ -1498,7 +1498,8 @@
             ".inner-sell-form-USDT"
           );
           for (i = 0; i <= innerSellForm.length; i++) {
-            innerSellForm[i].innerHTML = receiveUSDT;
+            document.querySelectorAll(".inner-sell-form-USDT")[i].innerHTML =
+              receiveUSDT;
             document.querySelectorAll(".inner-sell-form-token")[i].innerHTML =
               sellToken;
           }

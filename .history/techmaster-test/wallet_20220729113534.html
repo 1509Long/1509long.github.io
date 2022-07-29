@@ -699,7 +699,7 @@
       function innerUSDT() {
         for (i = 0; i <= quantity.length; i++) {
           quantity[i].textContent =
-            parseFloat(AssetsOfAccount[i].quantity).toLocaleString("en-US", {
+            (parseFloat(AssetsOfAccount[i].quantity)).toLocaleString("en-US", {
               maximumFractionDigits: "5",
             }) +
             " " +

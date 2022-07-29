@@ -1473,7 +1473,8 @@
         } else {
           let innerBuyForm = document.querySelectorAll(".inner-buy-form-USDT");
           for (i = 0; i <= innerBuyForm.length; i++) {
-            innerBuyForm[i].innerHTML = payUSDT;
+            innerBuyForm[i].innerHTML =
+              payUSDT;
             document.querySelectorAll(".inner-buy-form-token")[i].innerHTML =
               receiveToken;
           }
@@ -1498,7 +1499,8 @@
             ".inner-sell-form-USDT"
           );
           for (i = 0; i <= innerSellForm.length; i++) {
-            innerSellForm[i].innerHTML = receiveUSDT;
+            document.querySelectorAll(".inner-sell-form-USDT")[i].innerHTML =
+              receiveUSDT;
             document.querySelectorAll(".inner-sell-form-token")[i].innerHTML =
               sellToken;
           }
@@ -1509,24 +1511,27 @@
       var buyCanvas = document.getElementById("buy-button-canvas");
       var sellCanvas = document.getElementById("sell-button-canvas");
 
-      var buyTab = document.querySelector(".buy-canvas");
-      var sellTab = document.querySelector(".sell-canvas");
+      var buyTab = document.querySelector(".buy-canvas")
+      var sellTab = document.querySelector(".sell-canvas")
 
       function clickSellCanvas() {
         buyCanvas.removeAttribute("class");
-        sellCanvas.setAttribute("class", "click-sell-canvas");
+        sellCanvas.setAttribute("class" , "click-sell-canvas");
 
         buyTab.setAttribute("class", "disappear");
         sellTab.setAttribute("class", "sell-canvas appear");
+
       }
 
       function clickBuyCanvas() {
         sellCanvas.removeAttribute("class");
-        buyCanvas.setAttribute("class", "click-buy-canvas");
+        buyCanvas.setAttribute("class" , "click-buy-canvas");
 
         sellTab.setAttribute("class", "disappear");
         buyTab.setAttribute("class", "buy-canvas appear");
+
       }
+
 
       function getValueOfUSDTCanvas(x) {
         if (x.value > 0) {
@@ -1558,7 +1563,8 @@
         } else {
           let innerBuyForm = document.querySelectorAll(".inner-buy-form-USDT");
           for (i = 0; i <= innerBuyForm.length; i++) {
-            innerBuyForm[i].innerHTML = payUSDTCanvas;
+            innerBuyForm[i].innerHTML =
+              payUSDTCanvas;
             document.querySelectorAll(".inner-buy-form-token")[i].innerHTML =
               receiveTokenAuto;
           }
@@ -1598,7 +1604,8 @@
             ".inner-sell-form-USDT"
           );
           for (i = 0; i <= innerSellForm.length; i++) {
-            innerSellForm[i].innerHTML = receiveUSDTAuto;
+            document.querySelectorAll(".inner-sell-form-USDT")[i].innerHTML =
+              receiveUSDTAuto;
             document.querySelectorAll(".inner-sell-form-token")[i].innerHTML =
               sellTokenCanvas;
           }
